@@ -28,15 +28,19 @@ export default function Home() {
 
   return (
     <main>
-      <ShaderBackground>
-        <Header />
-        <HeroContent />
-        <PulsingCircle />
-      </ShaderBackground>
+      <div className="sticky top-0 h-screen">
+        <ShaderBackground>
+          <Header />
+          <HeroContent />
+          <PulsingCircle />
+        </ShaderBackground>
+      </div>
 
-      <FeaturedSection />
-      <PromoSection />
-      <Footer />
+      <div className="relative z-10 bg-white">
+        <FeaturedSection />
+        <PromoSection />
+        <Footer />
+      </div>
     </main>
   )
 }

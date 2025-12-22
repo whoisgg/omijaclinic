@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function FeaturedSection() {
   return (
-    <section className="flex min-h-screen flex-col px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:py-0">
+    <section className="flex flex-col px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:py-0 bg-white">
       <div className="mb-8 h-[400px] flex-1 lg:order-2 lg:mb-0 lg:h-[800px]">
         <Image
           src="/images/woman-horse.jpg"
