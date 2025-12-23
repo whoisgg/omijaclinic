@@ -6,11 +6,14 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [isInLightSection, setIsInLightSection] = useState(false)
+  const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const featuredSection = document.querySelector('[data-section="featured"]')
       const servicesSection = document.querySelector('[data-section="services"]')
+      const treatmentExpanded = document.body.getAttribute("data-treatment-expanded") === "true"
+      setIsTreatmentExpanded(treatmentExpanded)
 
       if (featuredSection || servicesSection) {
         const featuredRect = featuredSection?.getBoundingClientRect()
@@ -19,12 +22,19 @@ export default function Header() {
         const inFeatured = featuredRect && featuredRect.top <= 100 && featuredRect.bottom >= 0
         const inServices = servicesRect && servicesRect.top <= 100 && servicesRect.bottom >= 0
 
-        setIsInLightSection(inFeatured || inServices)
+        setIsInLightSection(!treatmentExpanded && (inFeatured || inServices))
       }
     }
     window.addEventListener("scroll", handleScroll)
     handleScroll() // Check on mount
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    const observer = new MutationObserver(handleScroll)
+    observer.observe(document.body, { attributes: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      observer.disconnect()
+    }
   }, [])
 
   const menuItems = [
@@ -37,14 +47,14 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[200] px-4 md:px-6 py-4 md:py-6 bg-transparent transition-colors duration-300 ${
-          isInLightSection ? "text-black" : "text-white"
+          isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
         }`}
       >
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between relative">
           <a
             href="/"
-            className={`font-light text-lg md:text-2xl tracking-tight transition-colors duration-300 ${
-              isInLightSection ? "text-black" : "text-white"
+            className={`font-light text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto ${
+              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
             }`}
           >
             Omiya Clinic
@@ -53,37 +63,41 @@ export default function Header() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 transition-all duration-300 hover:opacity-70 group ${
-              isInLightSection ? "text-black" : "text-white"
+              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
             }`}
             aria-label="Toggle menu"
           >
-            <div className="flex flex-col gap-[3px] w-12 md:w-[4.5rem]">
+            <div className="flex flex-col gap-[3px] w-10 md:w-[4.5rem]">
               <span
-                className={`h-[1px] w-full transition-all duration-300 ${isInLightSection ? "bg-black" : "bg-white"}`}
+                className={`h-[1px] w-full transition-all duration-300 ${
+                  isTreatmentExpanded ? "bg-white" : isInLightSection ? "bg-black" : "bg-white"
+                }`}
               />
               <span
-                className={`h-[1px] w-full transition-all duration-300 ${isInLightSection ? "bg-black" : "bg-white"}`}
+                className={`h-[1px] w-full transition-all duration-300 ${
+                  isTreatmentExpanded ? "bg-white" : isInLightSection ? "bg-black" : "bg-white"
+                }`}
               />
             </div>
-            <span className="text-xs md:text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="text-xs md:text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
               Menu
             </span>
           </button>
 
           <a
             href="#follow"
-            className={`text-xs md:text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 md:gap-2 ${
-              isInLightSection ? "text-black" : "text-white"
+            className={`text-[10px] md:text-base font-light tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap ${
+              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
             }`}
           >
-            Siguenos
+            Síguenos
             <svg
-              width="14"
-              height="14"
+              width="12"
+              height="12"
               viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="hidden md:block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 md:w-[14px] md:h-[14px]"
             >
               <path
                 d="M4 12L12 4M12 4H5.5M12 4V10.5"

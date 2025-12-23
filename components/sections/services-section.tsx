@@ -79,6 +79,14 @@ export default function ServicesSection() {
     }
   }, [expandedCard])
 
+  useEffect(() => {
+    if (expandedCard) {
+      document.body.setAttribute("data-treatment-expanded", "true")
+    } else {
+      document.body.removeAttribute("data-treatment-expanded")
+    }
+  }, [expandedCard])
+
   const handleCardClick = (treatmentId: string) => {
     const index = treatments.findIndex((t) => t.id === treatmentId)
     setCurrentIndex(index)
@@ -212,7 +220,7 @@ export default function ServicesSection() {
                     {/* Close Button */}
                     <button
                       onClick={() => setExpandedCard(null)}
-                      className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors z-50"
+                      className="absolute top-20 md:top-24 right-6 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors z-50"
                       aria-label="Close"
                     >
                       <svg

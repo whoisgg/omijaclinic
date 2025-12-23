@@ -28,7 +28,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <main className="overflow-x-hidden max-w-[100vw]">
       <Header />
 
       <div className="sticky top-0 h-screen">
@@ -37,7 +37,7 @@ export default function Home() {
         </ShaderBackground>
       </div>
 
-      <div className="relative z-10 bg-white">
+      <div className="relative z-30 bg-white">
         <IntroSection />
         <FeaturedSection />
         <PromoSection />
