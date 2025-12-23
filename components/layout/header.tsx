@@ -128,7 +128,7 @@ export default function Header() {
         </div>
 
         {/* Small image in top-left corner */}
-        <div className="absolute top-8 left-8 w-52 h-64 z-10 overflow-hidden">
+        <div className="absolute top-8 left-8 w-52 h-64 z-10 overflow-hidden hidden md:block">
           {menuItems.map((item) => (
             <div
               key={item.label}
@@ -145,14 +145,14 @@ export default function Header() {
         <div className="h-full flex flex-col">
           {/* Navigation items centered */}
           <div className="flex-1 flex items-start justify-center pt-8">
-            <nav className="flex flex-col items-start justify-start gap-3 h-64 ml-64">
+            <nav className="flex flex-col items-start justify-start gap-2 md:gap-3 h-64 md:ml-64 px-4 md:px-0">
               {menuItems.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onMouseEnter={() => setHoveredItem(item.label)}
                   onMouseLeave={() => setHoveredItem(null)}
-                  className={`text-[54px] leading-[1.1] font-semibold uppercase tracking-tight transition-all duration-500 ${
+                  className={`text-[32px] md:text-[54px] leading-[1.1] font-semibold uppercase tracking-tight transition-all duration-500 ${
                     hoveredItem === item.label ? "text-gray-400" : "text-black"
                   } ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{ transitionDelay: isMenuOpen ? `${(index + 1) * 100}ms` : "0ms" }}
