@@ -5,7 +5,7 @@ import ScrollIndicator from "@/components/ui/scroll-indicator"
 export default function HeroContent() {
   return (
     <>
-      <main className="absolute bottom-8 left-8 z-20 max-w-xl">
+      <main className="absolute bottom-16 md:bottom-8 left-8 z-20 max-w-xl">
         <div className="text-left">
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl md:leading-[5rem] tracking-tight font-light text-white mb-4">

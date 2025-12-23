@@ -15,38 +15,38 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 bg-transparent">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4 md:py-6 bg-transparent">
         <nav className="flex items-center justify-between">
-          <a href="/" className="text-white font-light text-2xl tracking-tight">
+          <a href="/" className="text-white font-light text-lg md:text-2xl tracking-tight">
             Omiya Clinic
           </a>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 text-white transition-all duration-300 hover:opacity-70 group"
+            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 text-white transition-all duration-300 hover:opacity-70 group"
             aria-label="Toggle menu"
           >
-            <div className="flex flex-col gap-[3px] w-[4.5rem]">
+            <div className="flex flex-col gap-[3px] w-12 md:w-[4.5rem]">
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
             </div>
-            <span className="text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="text-xs md:text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               Menu
             </span>
           </button>
 
           <a
             href="#follow"
-            className="text-white text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity flex items-center gap-2"
+            className="text-white text-xs md:text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity flex items-center gap-1 md:gap-2"
           >
             Siguenos
             <svg
-              width="16"
-              height="16"
+              width="14"
+              height="14"
               viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              className="hidden md:block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
             >
               <path
                 d="M4 12L12 4M12 4H5.5M12 4V10.5"
