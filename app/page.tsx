@@ -1,6 +1,7 @@
 "use client"
+
 import { useEffect } from "react"
-import Lenis from "lenis"
+import Lenis from "@studio-freight/lenis"
 import ShaderBackground from "@/components/sections/shader-background"
 import Header from "@/components/layout/header"
 import HeroContent from "@/components/sections/hero-content"
@@ -22,6 +23,10 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
   }, [])
 
   return (
