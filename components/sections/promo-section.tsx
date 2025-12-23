@@ -24,7 +24,10 @@ export default function PromoSection() {
             src="/images/clinic-reception.png"
             fill
             alt="Omija Clinic Reception"
-            style={{ objectFit: "cover", objectPosition: "left center" }}
+            className="object-cover object-[10%_center] md:object-left"
+            quality={95}
+            priority
+            sizes="100vw"
           />
         </motion.div>
       </div>
