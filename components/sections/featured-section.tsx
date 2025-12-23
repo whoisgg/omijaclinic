@@ -5,8 +5,8 @@ export default function FeaturedSection() {
     <section className="flex flex-col px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:py-0 bg-white">
       <div className="mb-8 h-[400px] flex-1 lg:order-2 lg:mb-0 lg:h-[800px]">
         <Image
-          src="/images/woman-horse.jpg"
-          alt="Woman on horse in countryside"
+          src="/images/professional-portrait.jpg"
+          alt="Professional portrait"
           width={600}
           height={800}
           className="h-full w-full object-cover"

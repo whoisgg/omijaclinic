@@ -15,12 +15,17 @@ export default function PromoSection() {
   return (
     <section
       ref={container}
-      className="relative flex h-screen items-center justify-center overflow-hidden"
+      className="relative flex h-screen items-center justify-center overflow-hidden max-w-screen-2xl mx-auto"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="fixed left-0 top-[-10vh] h-[120vh] w-full">
         <motion.div style={{ y }} className="relative h-full w-full">
-          <Image src="/images/spiral-circles.jpg" fill alt="Abstract spiral circles" style={{ objectFit: "cover" }} />
+          <Image
+            src="/images/clinic-reception.png"
+            fill
+            alt="Omija Clinic Reception"
+            style={{ objectFit: "cover", objectPosition: "left center" }}
+          />
         </motion.div>
       </div>
 

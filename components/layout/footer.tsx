@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
             <div className="mt-4 flex flex-col items-start justify-between gap-4 sm:mt-6 sm:flex-row sm:items-end sm:gap-0 lg:mt-10">
               <h1 className="text-[18vw] font-bold leading-[0.8] tracking-tight text-white sm:text-[16vw] lg:text-[14vw]">
-                RESEARCH
+                OMIYA CLINIC
               </h1>
               <p className="text-sm text-white sm:text-base">©copyright</p>
             </div>
