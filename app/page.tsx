@@ -29,9 +29,10 @@ export default function Home() {
 
   return (
     <main>
+      <Header />
+
       <div className="sticky top-0 h-screen">
         <ShaderBackground>
-          <Header />
           <HeroContent />
         </ShaderBackground>
       </div>

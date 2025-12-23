@@ -85,7 +85,11 @@ export default function FeaturedSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="flex flex-col lg:flex-row lg:items-center bg-white py-12 md:py-20 lg:py-32">
+    <section
+      ref={sectionRef}
+      data-section="featured"
+      className="flex flex-col lg:flex-row lg:items-center bg-white py-12 md:py-20 lg:py-32"
+    >
       <div className="flex flex-1 flex-col justify-center text-left px-6 py-12 lg:py-0 lg:h-[800px] max-w-7xl mx-auto lg:ml-auto lg:mr-0 lg:pl-8">
         <h3 ref={headingRef} className="mb-4 uppercase text-sm tracking-wider">
           Doctora Antonieta Ortega

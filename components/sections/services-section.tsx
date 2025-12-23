@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const treatments = [
@@ -35,22 +35,39 @@ const treatments = [
 
 export default function ServicesSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null)
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const lastScrollY = useRef(0)
+  const wheelTimeout = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    if (expandedCard) {
-      const handleScroll = () => {
-        const position = window.scrollY
-        setScrollPosition(position)
+    if (!expandedCard) return
 
-        // Close expanded card if scrolled down significantly
-        if (position > 100) {
-          setExpandedCard(null)
-        }
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault()
+
+      if (wheelTimeout.current) {
+        clearTimeout(wheelTimeout.current)
       }
 
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
+      wheelTimeout.current = setTimeout(() => {
+        if (e.deltaY < 0) {
+          setCurrentIndex((prev) => {
+            const next = (prev + 1) % treatments.length
+            setExpandedCard(treatments[next].id)
+            return next
+          })
+        } else if (e.deltaY > 0) {
+          setExpandedCard(null)
+        }
+      }, 50)
+    }
+
+    window.addEventListener("wheel", handleWheel, { passive: false })
+    return () => {
+      window.removeEventListener("wheel", handleWheel)
+      if (wheelTimeout.current) {
+        clearTimeout(wheelTimeout.current)
+      }
     }
   }, [expandedCard])
 
@@ -62,8 +79,14 @@ export default function ServicesSection() {
     }
   }, [expandedCard])
 
+  const handleCardClick = (treatmentId: string) => {
+    const index = treatments.findIndex((t) => t.id === treatmentId)
+    setCurrentIndex(index)
+    setExpandedCard(treatmentId)
+  }
+
   return (
-    <section className="relative bg-neutral-100 py-20 md:py-32 px-6">
+    <section data-section="services" className="relative bg-neutral-100 py-20 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16 md:mb-24">
@@ -95,7 +118,7 @@ export default function ServicesSection() {
                 return (
                   <div
                     key={treatment.id}
-                    onClick={() => setExpandedCard(treatment.id)}
+                    onClick={() => handleCardClick(treatment.id)}
                     className={`relative cursor-pointer overflow-hidden w-full md:w-[280px] transition-opacity hover:opacity-90 ${positionClasses}`}
                   >
                     <div className="aspect-[3/4] relative">
@@ -132,83 +155,95 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      {/* Expanded Card Overlay */}
-      <AnimatePresence>
+      {/* Expanded Card Overlay - Gallery Mode */}
+      <AnimatePresence mode="wait">
         {expandedCard && (
           <motion.div
+            key="gallery-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black z-50"
-            onClick={() => setExpandedCard(null)}
           >
-            {treatments
-              .filter((t) => t.id === expandedCard)
-              .map((treatment) => (
-                <motion.div
-                  key={treatment.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative w-full h-full"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
-                    <img
-                      src={treatment.image || "/placeholder.svg"}
-                      alt={treatment.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40" />
-                  </div>
+            <AnimatePresence mode="wait">
+              {treatments
+                .filter((t) => t.id === expandedCard)
+                .map((treatment) => (
+                  <motion.div
+                    key={treatment.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative w-full h-full"
+                  >
+                    {/* Background Image */}
+                    <div className="absolute inset-0">
+                      <img
+                        src={treatment.image || "/placeholder.svg"}
+                        alt={treatment.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/40" />
+                    </div>
 
-                  {/* Content Overlay */}
-                  <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
-                    <div className="max-w-2xl text-white">
-                      <h3 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
-                        {treatment.title.toUpperCase()}
-                      </h3>
-                      <p className="text-xl md:text-2xl leading-relaxed mb-6 font-medium">{treatment.description}</p>
-                      <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-normal">
-                        {treatment.longDescription}
-                      </p>
-                      <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
-                        Agenda Tu Consulta
-                      </button>
-
-                      <div className="mt-12 pt-8 border-t border-white/30">
-                        <p className="text-xs opacity-70 font-light">
-                          Desplázate hacia abajo para volver a los tratamientos
+                    {/* Content Overlay */}
+                    <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
+                      <div className="max-w-2xl text-white">
+                        <h3 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
+                          {treatment.title.toUpperCase()}
+                        </h3>
+                        <p className="text-xl md:text-2xl leading-relaxed mb-6 font-medium">{treatment.description}</p>
+                        <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-normal">
+                          {treatment.longDescription}
                         </p>
+                        <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
+                          Agenda Tu Consulta
+                        </button>
+
+                        <div className="mt-12 pt-8 border-t border-white/30">
+                          <p className="text-xs opacity-70 font-light">
+                            Desplázate hacia arriba para ver más tratamientos • Desplázate hacia abajo para cerrar
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setExpandedCard(null)}
-                    className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors z-50"
-                    aria-label="Close"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setExpandedCard(null)}
+                      className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors z-50"
+                      aria-label="Close"
                     >
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                  </button>
-                </motion.div>
-              ))}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    </button>
+
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+                      {treatments.map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`w-2 h-2 rounded-full transition-all ${
+                            currentIndex === idx ? "bg-white w-8" : "bg-white/40"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,34 +1,69 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [isInLightSection, setIsInLightSection] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const featuredSection = document.querySelector('[data-section="featured"]')
+      const servicesSection = document.querySelector('[data-section="services"]')
+
+      if (featuredSection || servicesSection) {
+        const featuredRect = featuredSection?.getBoundingClientRect()
+        const servicesRect = servicesSection?.getBoundingClientRect()
+
+        const inFeatured = featuredRect && featuredRect.top <= 100 && featuredRect.bottom >= 0
+        const inServices = servicesRect && servicesRect.top <= 100 && servicesRect.bottom >= 0
+
+        setIsInLightSection(inFeatured || inServices)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Check on mount
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const menuItems = [
-    { label: "OUR SHOP", href: "#shop", image: "/luxury-fashion-products.jpg" },
-    { label: "HOME", href: "#home", image: "/modern-interior-home.jpg" },
-    { label: "CONOCE MAS", href: "#about", image: "/team-portrait-professional.jpg" },
-    { label: "SERVICIOS", href: "#contact", image: "/contact-workspace.jpg" },
+    { label: "Acerca de", href: "#about", image: "/team-portrait-professional.jpg" },
+    { label: "Well Aging", href: "#wellaging", image: "/luxury-fashion-products.jpg" },
+    { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
   ]
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4 md:py-6 bg-transparent">
+      <header
+        className={`fixed top-0 left-0 right-0 z-[200] px-4 md:px-6 py-4 md:py-6 bg-transparent transition-colors duration-300 ${
+          isInLightSection ? "text-black" : "text-white"
+        }`}
+      >
         <nav className="flex items-center justify-between">
-          <a href="/" className="text-white font-light text-lg md:text-2xl tracking-tight">
+          <a
+            href="/"
+            className={`font-light text-lg md:text-2xl tracking-tight transition-colors duration-300 ${
+              isInLightSection ? "text-black" : "text-white"
+            }`}
+          >
             Omiya Clinic
           </a>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 text-white transition-all duration-300 hover:opacity-70 group"
+            className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 transition-all duration-300 hover:opacity-70 group ${
+              isInLightSection ? "text-black" : "text-white"
+            }`}
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-[3px] w-12 md:w-[4.5rem]">
-              <span className="h-[1px] bg-white w-full transition-all duration-300" />
-              <span className="h-[1px] bg-white w-full transition-all duration-300" />
+              <span
+                className={`h-[1px] w-full transition-all duration-300 ${isInLightSection ? "bg-black" : "bg-white"}`}
+              />
+              <span
+                className={`h-[1px] w-full transition-all duration-300 ${isInLightSection ? "bg-black" : "bg-white"}`}
+              />
             </div>
             <span className="text-xs md:text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               Menu
@@ -37,7 +72,9 @@ export default function Header() {
 
           <a
             href="#follow"
-            className="text-white text-xs md:text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity flex items-center gap-1 md:gap-2"
+            className={`text-xs md:text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 md:gap-2 ${
+              isInLightSection ? "text-black" : "text-white"
+            }`}
           >
             Siguenos
             <svg
@@ -61,7 +98,7 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed top-0 left-0 right-0 h-[70vh] z-[100] bg-[#f5f5f0] transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 h-[70vh] z-[250] bg-[#f5f5f0] transition-all duration-500 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
