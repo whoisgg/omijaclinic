@@ -32,13 +32,9 @@ export default function PromoSection() {
         </motion.div>
       </div>
 
-      <h3 className="absolute right-6 top-12 z-10 text-sm uppercase text-white md:text-base lg:text-lg">
-        Anatomy of Possibility
-      </h3>
-
       <p className="absolute bottom-12 right-6 z-10 max-w-xs text-xl text-white sm:max-w-md sm:text-2xl md:max-w-lg md:text-3xl lg:max-w-xl lg:text-4xl xl:max-w-5xl xl:text-5xl text-pretty">
-        Every section is a frame for your story. Shape it, remix it, and let your content spill into unexpected patterns
-        that keep people scrolling.
+        OMIYA (大宮) significa gran santuario en japonés y hace referencia a la ciudad reconocida como cuna del bonsái.
+        Un símbolo de respeto, paciencia y armonía entre el ser humano y la naturaleza.
       </p>
     </section>
   )

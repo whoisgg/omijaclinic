@@ -23,14 +23,16 @@ export default function Header() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 text-white transition-all duration-300 hover:opacity-70"
+            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 text-white transition-all duration-300 hover:opacity-70 group"
             aria-label="Toggle menu"
           >
-            <div className="flex flex-col gap-[3px] w-10">
+            <div className="flex flex-col gap-[3px] w-14">
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
             </div>
-            <span className="text-sm font-light tracking-[0.2em] uppercase">Menu</span>
+            <span className="text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Menu
+            </span>
           </button>
 
           <a
