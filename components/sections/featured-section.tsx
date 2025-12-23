@@ -54,7 +54,7 @@ export default function FeaturedSection() {
         y: 20,
         duration: 0.6,
         ease: "power2.out",
-        delay: 0.2,
+        delay: 0.15,
         scrollTrigger: {
           trigger: paragraph2Ref.current,
           start: "top 80%",
@@ -69,7 +69,7 @@ export default function FeaturedSection() {
         y: 20,
         duration: 0.6,
         ease: "power2.out",
-        delay: 0.3,
+        delay: 0.2,
         scrollTrigger: {
           trigger: buttonRef.current,
           start: "top 80%",

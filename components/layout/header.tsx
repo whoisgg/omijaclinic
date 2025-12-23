@@ -37,9 +37,25 @@ export default function Header() {
 
           <a
             href="#follow"
-            className="text-white text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
+            className="text-white text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity flex items-center gap-2"
           >
-            Follow us
+            Siguenos
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            >
+              <path
+                d="M4 12L12 4M12 4H5.5M12 4V10.5"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </a>
         </nav>
       </header>

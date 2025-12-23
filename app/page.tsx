@@ -8,6 +8,7 @@ import HeroContent from "@/components/sections/hero-content"
 import IntroSection from "@/components/sections/intro-section"
 import FeaturedSection from "@/components/sections/featured-section"
 import PromoSection from "@/components/sections/promo-section"
+import ServicesSection from "@/components/sections/services-section"
 import Footer from "@/components/layout/footer"
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
         <IntroSection />
         <FeaturedSection />
         <PromoSection />
+        <ServicesSection />
         <Footer />
       </div>
     </main>
