@@ -9,15 +9,15 @@ export default function Header() {
   const menuItems = [
     { label: "OUR SHOP", href: "#shop", image: "/luxury-fashion-products.jpg" },
     { label: "HOME", href: "#home", image: "/modern-interior-home.jpg" },
-    { label: "ABOUT US", href: "#about", image: "/team-portrait-professional.jpg" },
-    { label: "CONTACT", href: "#contact", image: "/contact-workspace.jpg" },
+    { label: "CONOCE MAS", href: "#about", image: "/team-portrait-professional.jpg" },
+    { label: "SERVICIOS", href: "#contact", image: "/contact-workspace.jpg" },
   ]
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 bg-transparent">
         <nav className="flex items-center justify-between">
-          <a href="/" className="text-white font-light text-xl tracking-tight">
+          <a href="/" className="text-white font-light text-2xl tracking-tight">
             Omiya Clinic
           </a>
 
@@ -26,7 +26,7 @@ export default function Header() {
             className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 text-white transition-all duration-300 hover:opacity-70 group"
             aria-label="Toggle menu"
           >
-            <div className="flex flex-col gap-[3px] w-14">
+            <div className="flex flex-col gap-[3px] w-[4.5rem]">
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
               <span className="h-[1px] bg-white w-full transition-all duration-300" />
             </div>
@@ -37,7 +37,7 @@ export default function Header() {
 
           <a
             href="#follow"
-            className="text-white text-sm font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
+            className="text-white text-base font-light tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
           >
             Follow us
           </a>
