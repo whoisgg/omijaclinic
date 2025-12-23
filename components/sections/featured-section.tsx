@@ -19,7 +19,6 @@ export default function FeaturedSection() {
     if (!sectionRef.current) return
 
     const ctx = gsap.context(() => {
-      // Animate heading
       gsap.from(headingRef.current, {
         opacity: 0,
         y: 20,
@@ -33,7 +32,6 @@ export default function FeaturedSection() {
         },
       })
 
-      // Animate first paragraph
       gsap.from(paragraph1Ref.current, {
         opacity: 0,
         y: 20,
@@ -48,13 +46,7 @@ export default function FeaturedSection() {
         },
       })
 
-      // Animate second paragraph
-      gsap.from(paragraph2Ref.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        delay: 0.15,
+      const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: paragraph2Ref.current,
           start: "top 80%",
@@ -63,22 +55,18 @@ export default function FeaturedSection() {
         },
       })
 
-      // Animate button
-      gsap.from(buttonRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: buttonRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
+      timeline.from(
+        [paragraph2Ref.current, buttonRef.current],
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0,
         },
-      })
+        0.15,
+      )
 
-      // Animate image
       gsap.from(imageRef.current, {
         opacity: 0,
         x: 20,
@@ -117,6 +105,7 @@ export default function FeaturedSection() {
         <button
           ref={buttonRef}
           className="w-fit cursor-pointer border border-black bg-black px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black"
+          style={{ opacity: 1 }}
         >
           conoce mas
         </button>
