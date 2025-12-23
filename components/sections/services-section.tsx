@@ -68,12 +68,12 @@ export default function ServicesSection() {
         {/* Header Section */}
         <div className="mb-16 md:mb-24">
           <div className="max-w-md">
-            <h2 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+            <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-6">
               NUESTROS
               <br />
               TRATAMIENTOS
             </h2>
-            <p className="text-sm md:text-base leading-relaxed text-gray-800">
+            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-normal">
               Ofrecemos tratamientos especializados que combinan salud y bienestar. Cada procedimiento es personalizado
               y realizado con dedicación, respeto y un profundo compromiso con tu cuidado integral.
             </p>
@@ -106,7 +106,7 @@ export default function ServicesSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h3 className="text-2xl md:text-3xl font-light tracking-wide">
+                        <h3 className="text-lg md:text-xl font-semibold tracking-widest">
                           {treatment.title.toUpperCase()}
                         </h3>
                       </div>
@@ -121,11 +121,11 @@ export default function ServicesSection() {
         {/* Bottom CTA */}
         <div className="mt-16 md:mt-24 flex justify-end">
           <div className="max-w-md text-right">
-            <p className="text-sm md:text-base leading-relaxed text-gray-800 mb-6">
+            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-normal mb-6">
               En Omiya Clinic, cada tratamiento se realiza con paciencia, precisión y un enfoque personalizado que
               respeta tu bienestar y armonía natural.
             </p>
-            <button className="text-xs md:text-sm font-medium underline underline-offset-4 hover:no-underline transition-all uppercase tracking-wide">
+            <button className="text-sm md:text-base font-semibold tracking-wide underline underline-offset-4 hover:no-underline transition-all">
               Explora Nuestros Tratamientos
             </button>
           </div>
@@ -167,17 +167,21 @@ export default function ServicesSection() {
                   {/* Content Overlay */}
                   <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
                     <div className="max-w-2xl text-white">
-                      <h3 className="text-5xl md:text-7xl font-light mb-8">{treatment.title.toUpperCase()}</h3>
-                      <p className="text-lg md:text-2xl leading-relaxed mb-6">{treatment.description}</p>
-                      <p className="text-base md:text-lg leading-relaxed mb-10 opacity-90">
+                      <h3 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
+                        {treatment.title.toUpperCase()}
+                      </h3>
+                      <p className="text-xl md:text-2xl leading-relaxed mb-6 font-medium">{treatment.description}</p>
+                      <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-normal">
                         {treatment.longDescription}
                       </p>
-                      <button className="px-8 py-4 bg-white text-black text-sm font-medium hover:bg-gray-100 transition-colors uppercase tracking-wide">
+                      <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
                         Agenda Tu Consulta
                       </button>
 
                       <div className="mt-12 pt-8 border-t border-white/30">
-                        <p className="text-xs opacity-70">Desplázate hacia abajo para volver a los tratamientos</p>
+                        <p className="text-xs opacity-70 font-light">
+                          Desplázate hacia abajo para volver a los tratamientos
+                        </p>
                       </div>
                     </div>
                   </div>
