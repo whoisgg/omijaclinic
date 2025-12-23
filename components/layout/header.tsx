@@ -128,7 +128,7 @@ export default function Header() {
         </div>
 
         {/* Small image in top-left corner */}
-        <div className="absolute top-8 left-8 w-52 h-64 z-10 overflow-hidden hidden md:block">
+        <div className="absolute top-8 left-8 w-52 h-64 z-10 overflow-hidden hidden sm:block">
           {menuItems.map((item) => (
             <div
               key={item.label}
@@ -143,9 +143,8 @@ export default function Header() {
 
         {/* Main content area */}
         <div className="h-full flex flex-col">
-          {/* Navigation items centered */}
-          <div className="flex-1 flex items-start justify-center pt-8">
-            <nav className="flex flex-col items-start justify-start gap-2 md:gap-3 h-64 md:ml-64 px-4 md:px-0">
+          <div className="flex-1 flex items-start justify-start sm:justify-center pt-8 px-4 sm:px-0">
+            <nav className="flex flex-col items-start sm:items-center justify-start gap-2 md:gap-3 h-64">
               {menuItems.map((item, index) => (
                 <a
                   key={item.label}

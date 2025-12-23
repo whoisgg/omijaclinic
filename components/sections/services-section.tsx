@@ -114,20 +114,20 @@ export default function ServicesSection() {
         {/* Treatment Cards Grid */}
         <div className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center">
           <div className="relative w-full max-w-6xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-6 md:gap-8 md:-mx-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 md:gap-8 md:-mx-4">
               {treatments.map((treatment, index) => {
                 const positionClasses =
                   index === 0
-                    ? "md:-translate-y-8 md:z-10"
+                    ? "sm:-translate-y-8 sm:z-10"
                     : index === 1
-                      ? "md:translate-y-16 md:z-20"
-                      : "md:-translate-y-12 md:z-10"
+                      ? "sm:translate-y-16 sm:z-20"
+                      : "sm:-translate-y-12 sm:z-10"
 
                 return (
                   <div
                     key={treatment.id}
                     onClick={() => handleCardClick(treatment.id)}
-                    className={`relative cursor-pointer overflow-hidden w-full md:w-[280px] transition-opacity hover:opacity-90 ${positionClasses}`}
+                    className={`relative cursor-pointer overflow-hidden w-full sm:w-[280px] transition-opacity hover:opacity-90 ${positionClasses}`}
                   >
                     <div className="aspect-[3/4] relative">
                       <img
@@ -137,7 +137,7 @@ export default function ServicesSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h3 className="text-lg md:text-xl font-semibold tracking-widest">
+                        <h3 className="text-lg sm:text-xl font-semibold tracking-widest">
                           {treatment.title.toUpperCase()}
                         </h3>
                       </div>

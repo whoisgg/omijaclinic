@@ -17,12 +17,11 @@ export default function HeroContent() {
             Tratamientos estéticos que realzan tu belleza auténtica
           </p>
 
-          {/* Buttons */}
-          <div className="flex items-center gap-4 flex-wrap">
-            <button className="px-8 py-3 rounded-full bg-transparent border border-white/30 text-white font-normal text-sm transition-all duration-200 hover:bg-white/10 hover:border-white/50 cursor-pointer">
+          <div className="flex items-center gap-3 flex-wrap">
+            <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-full bg-transparent border border-white/30 text-white font-normal text-xs md:text-sm transition-all duration-200 hover:bg-white/10 hover:border-white/50 cursor-pointer">
               Conoce Mas
             </button>
-            <button className="px-8 py-3 rounded-full bg-white text-black font-normal text-sm transition-all duration-200 hover:bg-white/90 cursor-pointer">
+            <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-full bg-white text-black font-normal text-xs md:text-sm transition-all duration-200 hover:bg-white/90 cursor-pointer">
               Agenda tu Cita
             </button>
           </div>
