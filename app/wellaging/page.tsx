@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import Lenis from "@studio-freight/lenis"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
+import WellagingPillars from "@/components/sections/wellaging-pillars"
 import Image from "next/image"
 
 export default function WellagingPage() {
@@ -77,13 +78,23 @@ export default function WellagingPage() {
             {/* Three Images Row */}
             <div className="grid grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                <Image src="/sunset-yoga-meditation-silhouette.jpg" alt="Yoga y bienestar" fill className="object-cover" />
+                <Image
+                  src="/sunset-yoga-meditation-silhouette.jpg"
+                  alt="Yoga y bienestar"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
                 <Image src="/happy-woman-laughing-authentic.jpg" alt="Mujer feliz" fill className="object-cover" />
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                <Image src="/artistic-head-flowers-mental-health.jpg" alt="Salud mental" fill className="object-cover" />
+                <Image
+                  src="/artistic-head-flowers-mental-health.jpg"
+                  alt="Salud mental"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
@@ -114,6 +125,9 @@ export default function WellagingPage() {
           </div>
         </div>
       </section>
+
+      {/* Pillars Section */}
+      <WellagingPillars />
 
       {/* Why Join Section */}
       <section className="py-16 md:py-24 bg-gray-50">
