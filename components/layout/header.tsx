@@ -1,12 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [isInLightSection, setIsInLightSection] = useState(false)
   const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false)
+  const pathname = usePathname()
+
+  const isWellagingPage = pathname === "/wellaging"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +30,7 @@ export default function Header() {
       }
     }
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Check on mount
+    handleScroll()
 
     const observer = new MutationObserver(handleScroll)
     observer.observe(document.body, { attributes: true })
@@ -39,43 +43,57 @@ export default function Header() {
 
   const menuItems = [
     { label: "Acerca de", href: "#about", image: "/team-portrait-professional.jpg" },
-    { label: "Well Aging", href: "#wellaging", image: "/luxury-fashion-products.jpg" },
+    { label: "Well Aging", href: "/wellaging", image: "/luxury-fashion-products.jpg" },
     { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
   ]
+
+  const textColor = isWellagingPage
+    ? "text-black"
+    : isTreatmentExpanded
+      ? "text-white"
+      : isInLightSection
+        ? "text-black"
+        : "text-white"
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[200] px-4 md:px-6 py-4 md:py-6 bg-transparent transition-colors duration-300 ${
-          isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-[200] px-4 md:px-6 py-4 md:py-6 transition-colors duration-300 bg-transparent ${textColor}`}
       >
         <nav className="flex items-center justify-between relative">
           <a
             href="/"
-            className={`font-light text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto ${
-              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
-            }`}
+            className={`font-light text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto`}
           >
             Omiya Clinic
           </a>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 transition-all duration-300 hover:opacity-70 group ${
-              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
-            }`}
+            className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 transition-all duration-300 hover:opacity-70 group`}
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-[3px] w-10 md:w-[4.5rem]">
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isTreatmentExpanded ? "bg-white" : isInLightSection ? "bg-black" : "bg-white"
+                  isWellagingPage
+                    ? "bg-black"
+                    : isTreatmentExpanded
+                      ? "bg-white"
+                      : isInLightSection
+                        ? "bg-black"
+                        : "bg-white"
                 }`}
               />
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isTreatmentExpanded ? "bg-white" : isInLightSection ? "bg-black" : "bg-white"
+                  isWellagingPage
+                    ? "bg-black"
+                    : isTreatmentExpanded
+                      ? "bg-white"
+                      : isInLightSection
+                        ? "bg-black"
+                        : "bg-white"
                 }`}
               />
             </div>
@@ -86,9 +104,7 @@ export default function Header() {
 
           <a
             href="#follow"
-            className={`text-[10px] md:text-base font-light tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap ${
-              isTreatmentExpanded ? "text-white" : isInLightSection ? "text-black" : "text-white"
-            }`}
+            className={`text-[10px] md:text-base font-light tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
           >
             Síguenos
             <svg

@@ -2,7 +2,7 @@
 
 import Picture1 from "@/public/aesthetic-clinic-reception-area-with-minimalist-de.jpg"
 import Picture2 from "@/public/modern-aesthetic-clinic-treatment-room-with-natura.jpg"
-import Picture3 from "@/public/professional-aesthetic-treatment-being-performed.jpg"
+import Picture3 from "@/public/la-historia-detras-de-omiya.png"
 import Picture4 from "@/public/modern-clinic-waiting-room-with-comfortable-seatin.jpg"
 import Picture5 from "@/public/dental-clinic-interior.png"
 import Picture6 from "@/public/modern-endodontic-treatment-room.jpg"
@@ -14,7 +14,7 @@ export default function ZoomParallaxSection() {
   const pictures = [
     Picture1, // Reception - center
     Picture2, // Treatment room
-    Picture3, // Treatment being performed
+    Picture3, // La Historia Detrás de Omiya
     Picture4, // Waiting room
     Picture5, // Dental interior
     Picture6, // Treatment room
