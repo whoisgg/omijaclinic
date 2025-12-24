@@ -1,23 +1,23 @@
 "use client"
 
-import Picture1 from "@/public/aesthetic-clinic-reception-area-with-minimalist-de.jpg"
-import Picture2 from "@/public/modern-aesthetic-clinic-treatment-room-with-natura.jpg"
+import Picture1 from "@/public/wellaging-club.png"
+import Picture2 from "@/public/renacer-en-la-piel.png"
 import Picture3 from "@/public/la-historia-detras-de-omiya.png"
 import Picture4 from "@/public/modern-clinic-waiting-room-with-comfortable-seatin.jpg"
-import Picture5 from "@/public/dental-clinic-interior.png"
-import Picture6 from "@/public/modern-endodontic-treatment-room.jpg"
+import Picture5 from "@/public/exo-tox-full-face.png"
+import Picture6 from "@/public/la-verdad-del-wellaging.png"
 import Picture7 from "@/public/aesthetic-dental-treatment.jpg"
 
 import Image from "next/image"
 
 export default function ZoomParallaxSection() {
   const pictures = [
-    Picture1, // Reception - center
+    Picture1, // Wellaging Club group photo - center
     Picture2, // Treatment room
     Picture3, // La Historia Detrás de Omiya
     Picture4, // Waiting room
-    Picture5, // Dental interior
-    Picture6, // Treatment room
+    Picture5, // EXO TOX treatment
+    Picture6, // Wellaging hourglass
     Picture7, // Dental treatment
   ]
 
