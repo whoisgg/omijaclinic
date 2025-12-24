@@ -42,7 +42,7 @@ export default function Header() {
   }, [])
 
   const menuItems = [
-    { label: "Acerca de", href: "#about", image: "/team-portrait-professional.jpg" },
+    { label: "Acerca de", href: "/acerca-de", image: "/team-portrait-professional.jpg" },
     { label: "Well Aging", href: "/wellaging", image: "/luxury-fashion-products.jpg" },
     { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
   ]

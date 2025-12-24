@@ -6,7 +6,7 @@ import Picture3 from "@/public/la-historia-detras-de-omiya.png"
 import Picture4 from "@/public/modern-clinic-waiting-room-with-comfortable-seatin.jpg"
 import Picture5 from "@/public/exo-tox-full-face.png"
 import Picture6 from "@/public/la-verdad-del-wellaging.png"
-import Picture7 from "@/public/aesthetic-dental-treatment.jpg"
+import Picture7 from "@/public/mujeres-poderosas.png"
 
 import Image from "next/image"
 
@@ -18,7 +18,7 @@ export default function ZoomParallaxSection() {
     Picture4, // Waiting room
     Picture5, // EXO TOX treatment
     Picture6, // Wellaging hourglass
-    Picture7, // Dental treatment
+    Picture7, // Mujeres Poderosas
   ]
 
   return (

@@ -21,7 +21,7 @@ export default function PromoSection() {
       <div className="fixed left-0 top-[-10vh] h-[120vh] w-full">
         <motion.div style={{ y }} className="relative h-full w-full">
           <Image
-            src="/images/untitled.webp"
+            src="/images/clinca.webp"
             fill
             alt="Omija Clinic Reception"
             className="object-cover object-[10%_center] md:object-left"
