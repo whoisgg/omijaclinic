@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import ScrollIndicator from "@/components/ui/scroll-indicator"
 
 export default function AboutHero() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -56,21 +57,17 @@ export default function AboutHero() {
       <div className="relative z-10 h-full flex items-center justify-start px-6 lg:px-12">
         <div className="max-w-4xl">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
-            Acerca de
+            Dra.
+            <br />
+            Antonieta Ortega
           </h1>
           <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-2xl text-pretty">
-            Creating meaningful experiences through innovative design and storytelling
+            Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
           </p>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-white/60 text-sm uppercase tracking-wider">Scroll</span>
-        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-white/60 rounded-full animate-bounce" />
-        </div>
-      </div>
+      <ScrollIndicator />
     </section>
   )
 }
