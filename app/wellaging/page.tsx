@@ -28,7 +28,10 @@ export default function WellagingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-24 md:pt-32 pb-16 md:pb-24">
+      <section
+        data-section="hero"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-24 md:pt-32 pb-16 md:pb-24"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left: Image */}

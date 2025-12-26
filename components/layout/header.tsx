@@ -6,29 +6,31 @@ import { usePathname } from "next/navigation"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
-  const [isInLightSection, setIsInLightSection] = useState(false)
+  const [isWhiteText, setIsWhiteText] = useState(true)
   const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false)
   const pathname = usePathname()
 
-  const isWellagingPage = pathname === "/wellaging"
-
   useEffect(() => {
     const handleScroll = () => {
-      const featuredSection = document.querySelector('[data-section="featured"]')
-      const servicesSection = document.querySelector('[data-section="services"]')
       const treatmentExpanded = document.body.getAttribute("data-treatment-expanded") === "true"
       setIsTreatmentExpanded(treatmentExpanded)
 
-      if (featuredSection || servicesSection) {
-        const featuredRect = featuredSection?.getBoundingClientRect()
-        const servicesRect = servicesSection?.getBoundingClientRect()
+      const heroSection = document.querySelector('[data-section="hero"]')
+      const promoSection = document.querySelector('[data-section="promo"]')
 
-        const inFeatured = featuredRect && featuredRect.top <= 100 && featuredRect.bottom >= 0
-        const inServices = servicesRect && servicesRect.top <= 100 && servicesRect.bottom >= 0
+      const heroRect = heroSection?.getBoundingClientRect()
+      const promoRect = promoSection?.getBoundingClientRect()
 
-        setIsInLightSection(!treatmentExpanded && (inFeatured || inServices))
+      const inHero = heroRect && heroRect.top <= 100 && heroRect.bottom >= 0
+      const inPromo = promoRect && promoRect.top <= 100 && promoRect.bottom >= 0
+
+      if (inHero || inPromo) {
+        setIsWhiteText(true)
+      } else {
+        setIsWhiteText(false)
       }
     }
+
     window.addEventListener("scroll", handleScroll)
     handleScroll()
 
@@ -47,13 +49,7 @@ export default function Header() {
     { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
   ]
 
-  const textColor = isWellagingPage
-    ? "text-black"
-    : isTreatmentExpanded
-      ? "text-white"
-      : isInLightSection
-        ? "text-black"
-        : "text-white"
+  const textColor = isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
 
   return (
     <>
@@ -76,24 +72,12 @@ export default function Header() {
             <div className="flex flex-col gap-[3px] w-10 md:w-[4.5rem]">
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isWellagingPage
-                    ? "bg-black"
-                    : isTreatmentExpanded
-                      ? "bg-white"
-                      : isInLightSection
-                        ? "bg-black"
-                        : "bg-white"
+                  isTreatmentExpanded ? "bg-white" : isWhiteText ? "bg-white" : "bg-black"
                 }`}
               />
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isWellagingPage
-                    ? "bg-black"
-                    : isTreatmentExpanded
-                      ? "bg-white"
-                      : isInLightSection
-                        ? "bg-black"
-                        : "bg-white"
+                  isTreatmentExpanded ? "bg-white" : isWhiteText ? "bg-white" : "bg-black"
                 }`}
               />
             </div>

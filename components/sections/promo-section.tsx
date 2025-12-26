@@ -15,6 +15,7 @@ export default function PromoSection() {
   return (
     <section
       ref={container}
+      data-section="promo"
       className="relative flex h-screen items-center justify-center overflow-hidden"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >

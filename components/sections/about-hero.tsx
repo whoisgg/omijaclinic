@@ -38,7 +38,7 @@ export default function AboutHero() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen bg-black overflow-hidden">
+    <section ref={sectionRef} data-section="hero" className="relative w-full h-screen bg-black overflow-hidden">
       {/* Hero Image - First Frame */}
       <div className="absolute inset-0">
         <img
