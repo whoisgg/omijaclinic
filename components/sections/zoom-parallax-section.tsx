@@ -22,8 +22,16 @@ export default function ZoomParallaxSection() {
     Picture7,
   ]
 
-  // Temporary filler links
-  const links = Array.from({ length: pictures.length }, () => "https://www.google.com")
+const links = [
+  "https://www.instagram.com/p/DSDr7ERD_hj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/C_J8d8Jyc3p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/DSTGpqCD0VJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/DSV2BN2EYfV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/DSa-B9sD-AS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/DSYUCsLDzjh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/reel/DSI0AUnjxBe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+]
+
 
   return (
     <>
