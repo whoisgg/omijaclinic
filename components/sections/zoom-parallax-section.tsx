@@ -12,26 +12,17 @@ import Picture6 from "@/public/verdadwellaging.webp"
 import Picture7 from "@/public/mujerespoderas.webp"
 
 export default function ZoomParallaxSection() {
-  const pictures = [
-    Picture1,
-    Picture2,
-    Picture3,
-    Picture4,
-    Picture5,
-    Picture6,
-    Picture7,
+  const pictures = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7]
+
+  const links = [
+    "https://www.instagram.com/p/DSDr7ERD_hj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/C_J8d8Jyc3p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/DSTGpqCD0VJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/DSV2BN2EYfV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/DSa-B9sD-AS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/DSYUCsLDzjh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "https://www.instagram.com/reel/DSI0AUnjxBe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   ]
-
-const links = [
-  "https://www.instagram.com/p/DSDr7ERD_hj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/C_J8d8Jyc3p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/DSTGpqCD0VJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/DSV2BN2EYfV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/DSa-B9sD-AS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/DSYUCsLDzjh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  "https://www.instagram.com/reel/DSI0AUnjxBe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-]
-
 
   return (
     <>
@@ -43,16 +34,25 @@ const links = [
               index === 0
                 ? { width: "25vw", height: "25vh" }
                 : index === 1
-                ? { top: "-30vh", left: "5vw", width: "35vw", height: "30vh" }
+                  ? { top: "-30vh", left: "5vw", width: "35vw", height: "30vh" }
+                  : index === 2
+                    ? { top: "-10vh", left: "-25vw", width: "20vw", height: "45vh" }
+                    : index === 3
+                      ? { left: "27.5vw", width: "25vw", height: "25vh" }
+                      : index === 4
+                        ? { top: "27.5vh", left: "5vw", width: "20vw", height: "25vh" }
+                        : index === 5
+                          ? { top: "27.5vh", left: "-22.5vw", width: "30vw", height: "25vh" }
+                          : { top: "22.5vh", left: "25vw", width: "15vw", height: "15vh" }
+
+            const objectPosition =
+              index === 0
+                ? "center 70%" // Move Wellaging Club image down to show bottom text
                 : index === 2
-                ? { top: "-10vh", left: "-25vw", width: "20vw", height: "45vh" }
-                : index === 3
-                ? { left: "27.5vw", width: "25vw", height: "25vh" }
-                : index === 4
-                ? { top: "27.5vh", left: "5vw", width: "20vw", height: "25vh" }
-                : index === 5
-                ? { top: "27.5vh", left: "-22.5vw", width: "30vw", height: "25vh" }
-                : { top: "22.5vh", left: "25vw", width: "15vw", height: "15vh" }
+                  ? "30% center" // Historia Omiya
+                  : index === 5
+                    ? "center 40%" // Move La Verdad image up to show the title and hourglass
+                    : undefined
 
             return (
               <div
@@ -68,13 +68,13 @@ const links = [
                     aria-label={`Open image link ${index + 1}`}
                   >
                     <Image
-                      src={src}
+                      src={src || "/placeholder.svg"}
                       alt={`Clinic image ${index + 1}`}
                       fill
                       priority={index === 0}
                       sizes="(min-width: 640px) 30vw, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={index === 2 ? { objectPosition: "30% center" } : undefined}
+                      style={objectPosition ? { objectPosition } : undefined}
                     />
                   </Link>
                 </div>
@@ -97,7 +97,7 @@ const links = [
                 aria-label={`Open image link ${index + 1}`}
               >
                 <Image
-                  src={src}
+                  src={src || "/placeholder.svg"}
                   alt={`Clinic image ${index + 1}`}
                   fill
                   sizes="100vw"
