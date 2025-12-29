@@ -36,9 +36,7 @@ export default function ExperienceSection() {
         <ScrollReveal direction="up">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-gray-500">FORMACIÓN</p>
         </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <h2 className="mb-20 text-5xl md:text-7xl font-bold text-gray-900">Mi Trayectoria Profesional</h2>
-        </ScrollReveal>
+
 
         <div className="space-y-20">
           {experiences.map((exp, index) => (
@@ -55,9 +53,7 @@ export default function ExperienceSection() {
                   </div>
                 </div>
               </ScrollReveal>
-              <LineReveal delay={0.2}>
-                <div className="mt-8 h-px bg-gray-300" />
-              </LineReveal>
+
             </div>
           ))}
         </div>
