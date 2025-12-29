@@ -2,29 +2,25 @@
 
 import { useEffect, useRef } from "react"
 import ScrollIndicator from "@/components/ui/scroll-indicator"
+import { gsap } from "gsap"
 
 export default function AboutHero() {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const subtitleRef = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
     const imageElements: HTMLImageElement[] = []
     let loadedCount = 0
 
     for (let i = 0; i < 1; i++) {
-      // Only preload frame 00
       const img = new Image()
       img.src = `/images/hero-frames/frame_${String(i).padStart(2, "0")}_delay-0.04s.png`
       img.onload = () => {
         loadedCount++
-        if (loadedCount === 1) {
-          // No longer needed to set state
-        }
       }
       img.onerror = () => {
         loadedCount++
-        if (loadedCount === 1) {
-          // No longer needed to set state
-        }
       }
       imageElements.push(img)
     }
@@ -35,6 +31,35 @@ export default function AboutHero() {
         img.onerror = null
       })
     }
+  }, [])
+
+  useEffect(() => {
+    if (!titleRef.current || !subtitleRef.current) return
+
+    const ctx = gsap.context(() => {
+      const titleLines = titleRef.current?.querySelectorAll(".hero-title-line")
+
+      gsap.from(titleLines, {
+        opacity: 0,
+        y: 100,
+        rotationX: -45,
+        transformOrigin: "50% 100%",
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.3,
+      })
+
+      gsap.from(subtitleRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.9,
+      })
+    })
+
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -53,15 +78,19 @@ export default function AboutHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
       </div>
 
-      {/* Text Content */}
       <div className="relative z-10 h-full flex items-center justify-start px-6 lg:px-12">
-        <div className="max-w-4xl">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
-            Dra.
-            <br />
-            Antonieta Ortega
+        <div className="max-w-4xl" style={{ perspective: "1000px" }}>
+          <h1
+            ref={titleRef}
+            className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight text-balance"
+          >
+            <span className="hero-title-line block">Dra.</span>
+            <span className="hero-title-line block">Antonieta Ortega</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-2xl text-pretty">
+          <p
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-2xl text-pretty"
+          >
             Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
           </p>
         </div>
