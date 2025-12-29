@@ -18,7 +18,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-8 text-center lg:text-left flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gray-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-light text-gray-900">
               ¿Te gustaría conversar?
             </h2>
 
@@ -33,8 +33,6 @@ export default function ContactSection() {
             >
               doctora@antonietaortega.cl
             </a>
-
-          
 
             <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
               <a
