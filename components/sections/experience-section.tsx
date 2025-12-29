@@ -34,27 +34,27 @@ export default function ExperienceSection() {
     <section className="py-32 px-6 bg-[#f5f5f0]">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-gray-500">FORMACIÓN</p>
+          <p className="mb-4 text-sm font-normal uppercase tracking-widest text-gray-500">FORMACIÓN</p>
         </ScrollReveal>
-
 
         <div className="space-y-20">
           {experiences.map((exp, index) => (
-            <div key={index}>
+            <LineReveal key={index}>
               <ScrollReveal direction={exp.direction} distance={100}>
                 <div className="grid md:grid-cols-[1fr_auto] gap-8 items-start">
                   <div className="space-y-4">
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900">{exp.title}</h3>
-                    <p className="text-lg md:text-xl text-gray-600">{exp.organization}</p>
-                    <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-3xl">{exp.description}</p>
+                    <h3 className="text-4xl md:text-5xl font-semibold text-gray-900">{exp.title}</h3>
+                    <p className="text-lg md:text-xl font-normal text-gray-600">{exp.organization}</p>
+                    <p className="text-base md:text-lg font-normal text-gray-500 leading-relaxed max-w-3xl">
+                      {exp.description}
+                    </p>
                   </div>
-                  <div className="w-32 h-32 md:w-40 md:h-40 relative rounded-lg overflow-hidden border-2 border-gray-200 flex-shrink-0 bg-white p-4">
+                  <div className="w-32 h-32 md:w-40 md:h-40 relative rounded-lg overflow-hidden border border-gray-200 flex-shrink-0 bg-white p-4">
                     <Image src={exp.image || "/placeholder.svg"} alt={exp.title} fill className="object-contain" />
                   </div>
                 </div>
               </ScrollReveal>
-
-            </div>
+            </LineReveal>
           ))}
         </div>
       </div>

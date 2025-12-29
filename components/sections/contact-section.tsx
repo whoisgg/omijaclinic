@@ -1,48 +1,61 @@
 "use client"
 
+import { Instagram, Facebook } from "lucide-react"
+import Image from "next/image"
+
 export default function ContactSection() {
   return (
     <section className="py-20 md:py-32 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left side - Main content */}
-          <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">Conectemos</h2>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-lg overflow-hidden">
+            <Image
+              src="/images/screenshot-202025-12-24-20100619.png"
+              alt="Dra. Antonieta Ortega"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
-              Siempre abierta a nuevas oportunidades, colaboraciones y conversaciones sobre bienestar y estética
-              consciente.
+          <div className="space-y-8 text-center lg:text-left flex flex-col justify-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gray-900">
+              ¿Te gustaría conversar?
+            </h2>
+
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              Siempre estoy abierta a nuevas ideas, proyectos y colaboraciones alineadas con una visión consciente del
+              bienestar.
             </p>
 
             <a
-              href="mailto:antonietaortegam@gmail.com"
-              className="inline-flex items-center gap-2 text-xl md:text-2xl text-gray-900 hover:text-gray-600 transition-colors group"
+              href="mailto:doctora@antonietaortega.cl"
+              className="text-xl md:text-2xl font-normal text-gray-900 hover:text-gray-600 transition-colors"
             >
               doctora@antonietaortega.cl
-              <span className="text-2xl group-hover:translate-x-1 transition-transform">→</span>
             </a>
-          </div>
 
-          {/* Right side - Links grid */}
-          <div>
-         
+          
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
               <a
-                href="https://instagram.com/omiyaclinic"
+                href="https://instagram.com/dra.antonietaortegamunoz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-gray-300 rounded-lg p-6 hover:border-gray-900 transition-colors group"
+                className="w-14 h-14 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-gray-600 transition-colors"
+                aria-label="Instagram"
               >
-                <div className="text-xl font-light text-gray-900 mb-2">Instagram</div>
-                <div className="text-gray-600">@dra.antonietaortegamunoz</div>
+                <Instagram className="w-6 h-6 text-gray-600" />
               </a>
 
-              <div className="border border-gray-300 rounded-lg p-6">
-                <div className="text-xl font-light text-gray-900 mb-2">WhatsApp</div>
-                <div className="text-gray-600">+56 9 8464 4659</div>
-              </div>
-
+              <a
+                href="https://facebook.com/dra.antonietaortega"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-gray-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6 text-gray-600" />
+              </a>
             </div>
           </div>
         </div>
