@@ -99,7 +99,7 @@ export default function ServicesSection() {
         {/* Header Section */}
         <div className="mb-16 md:mb-24">
           <div className="max-w-md">
-            <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase tracking-tight mb-6">
               NUESTROS
               <br />
               TRATAMIENTOS

@@ -1,70 +1,83 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
+import { useRef, useEffect } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { TextReveal } from "@/components/text-reveal"
-import { ScrollReveal } from "@/components/scroll-reveal"
-
-gsap.registerPlugin(ScrollTrigger)
+import gsap from "gsap"
+import type { JSX } from "react" // Declared JSX for linting
 
 export default function IkigaiSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const textRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
+  const refs = useRef<(HTMLSpanElement | null)[]>([])
+  const container = useRef<HTMLDivElement>(null)
+
+  const phrase =
+    "Acompañar a la mujer adulta en su proceso de envejecimiento promoviendo el bienestar integral y la educación como caminos para fomentar armonía y comunidad"
 
   useEffect(() => {
-    if (!sectionRef.current || !textRef.current) return
-
-    const ctx = gsap.context(() => {
-      const words = textRef.current?.querySelectorAll(".ikigai-word")
-
-      gsap.from(words, {
-        opacity: 0,
-        y: 50,
-        rotationX: -90,
-        transformOrigin: "50% 50%",
-        duration: 0.8,
-        stagger: 0.05,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 70%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      })
-
-      gsap.from(imageRef.current, {
-        opacity: 0,
-        y: 80,
-        scale: 0.8,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top 75%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
+    gsap.registerPlugin(ScrollTrigger)
+    createAnimation()
   }, [])
 
-  return (
-    <section ref={sectionRef} className="py-32 px-6 bg-white">
-      <div className="max-w-5xl mx-auto">
-        <ScrollReveal direction="up">
-          <p className="mb-6 text-sm font-medium uppercase tracking-widest text-gray-500">Mi Ikigai</p>
-        </ScrollReveal>
+  const createAnimation = () => {
+    gsap.to(refs.current, {
+      scrollTrigger: {
+        trigger: container.current,
+        scrub: true,
+        start: `top center`,
+        end: `+=${window.innerHeight / 1.5}`,
+      },
+      opacity: 1,
+      ease: "none",
+      stagger: 0.1,
+    })
+  }
 
-        <TextReveal
-          text="Busco acompañar a la mujer adulta en su proceso de envejecimiento promoviendo el bienestar integral y la educación como caminos para fomentar armonía y comunidad"
-          className="text-4xl md:text-5xl lg:text-6xl font-light leading-snug text-gray-900 text-justify"
-          staggerDelay={0.04}
-        />
+  const splitWords = (phrase: string) => {
+    const body: JSX.Element[] = []
+    phrase.split(" ").forEach((word, i) => {
+      const letters = splitLetters(word)
+      body.push(
+        <p key={word + "_" + i} className="inline">
+          {letters}{" "}
+        </p>,
+      )
+    })
+    return body
+  }
+
+  const splitLetters = (word: string) => {
+    const letters: JSX.Element[] = []
+    word.split("").forEach((letter, i) => {
+      letters.push(
+        <span
+          key={letter + "_" + i}
+          ref={(el) => {
+            refs.current.push(el)
+          }}
+          className="opacity-20"
+        >
+          {letter}
+        </span>,
+      )
+    })
+    return letters
+  }
+
+  return (
+    <section className="bg-white px-6 py-32">
+      <div className="mx-auto w-full max-w-6xl">
+        {/* Eyebrow */}
+        <p className="mb-10 text-xs font-medium uppercase tracking-[0.28em] text-slate-500 md:mb-12">Mi Ikigai</p>
+
+        {/* Animated text with gradient opacity */}
+        <div
+          ref={container}
+          className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight text-pretty uppercase"
+        >
+          {splitWords(phrase)}
+        </div>
+
+        {/* Divider */}
+        <div className="mt-12 h-px w-full bg-slate-100 md:mt-14" />
       </div>
     </section>
   )

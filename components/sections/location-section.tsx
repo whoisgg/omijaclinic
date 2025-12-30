@@ -9,7 +9,9 @@ export default function LocationSection() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Information */}
           <div className="space-y-8">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-8">Visítanos</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase text-foreground mb-8">
+              Visítanos
+            </h2>
 
             <div className="space-y-6">
               {/* Address */}

@@ -18,7 +18,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-8 text-center lg:text-left flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-light text-gray-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase text-gray-900">
               ¿Te gustaría conversar?
             </h2>
 

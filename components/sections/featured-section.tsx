@@ -96,7 +96,7 @@ export default function FeaturedSection() {
       <div className="flex flex-1 flex-col justify-center px-6 py-16 md:py-20 lg:py-32 lg:px-12 xl:px-20 max-w-4xl lg:max-w-none">
         <h2
           ref={headingRef}
-          className="mb-12 text-4xl md:text-5xl lg:text-6xl font-sans font-normal leading-tight text-pretty"
+          className="mb-12 text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase"
         >
           El wellaging es una forma consciente de acompañar el paso del tiempo.
         </h2>

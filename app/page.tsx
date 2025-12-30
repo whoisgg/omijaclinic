@@ -41,8 +41,8 @@ export default function Home() {
 
       <div className="relative z-30 bg-white">
         <IntroSection />
+         <PromoSection />
         <FeaturedSection />
-        <PromoSection />
         <ServicesSection />
         <ZoomParallaxSection />
         <LocationSection />
