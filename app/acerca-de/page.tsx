@@ -6,7 +6,7 @@ import Header from "@/components/layout/header"
 import AboutHero from "@/components/sections/about-hero"
 import IkigaiSection from "@/components/sections/ikigai-section"
 import ExperienceSection from "@/components/sections/experience-section"
-import HorizontalGallery from "@/components/sections/horizontal-gallery"
+import VerticalGallery from "@/components/sections/vertical-gallery"
 import ContactSection from "@/components/sections/contact-section"
 import Footer from "@/components/layout/footer"
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <AboutHero />
       <IkigaiSection />
       <ExperienceSection />
-      <HorizontalGallery />
+      <VerticalGallery />
       <ContactSection />
       <Footer />
     </main>
