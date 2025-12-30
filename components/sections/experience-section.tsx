@@ -24,7 +24,7 @@ const experiences = [
   {
     title1: "2024 - Armonización",
     title2: "Orofacial",
-    description: "Instituto de Estética Avanzada",
+    description: "Especialista en Armonización Orofacial Instituto de Estética Avanzada",
     image: "/images/logo-inro.png",
     direction: "up" as const,
   },
