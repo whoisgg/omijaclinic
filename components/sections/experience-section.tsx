@@ -46,7 +46,7 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="py-32 px-6 bg-black">
+    <section className="py-20 px-6 md:py-24 lg:py-28 xl:py-32 2xl:py-36 bg-black">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
           <p className="mb-4 text-sm font-normal uppercase tracking-widest text-gray-400">FORMACIÓN</p>
@@ -75,38 +75,38 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
       onMouseLeave={() => setIsActive(false)}
       className="cursor-pointer py-6 relative"
     >
-      <div className="relative min-h-[60px] md:min-h-[70px] flex items-center">
-        {/* Default titles (fade out on hover) */}
+      <div className="relative min-h-[60px] md:min-h-[70px] lg:min-h-[80px] xl:min-h-[80px] flex items-center">
         <motion.div
           initial={{ opacity: 1 }}
           animate={isActive ? { opacity: 0 } : { opacity: 1 }}
           transition={{ duration: 0.25 }}
           className="flex items-center justify-start"
         >
-          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 mr-2 md:mr-3 text-white">
+          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold uppercase m-0 mr-2 md:mr-3 text-white">
             {experience.title1}
           </p>
-          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 ml-2 md:ml-3 text-white">
+          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold uppercase m-0 ml-2 md:ml-3 text-white">
             {experience.title2}
           </p>
         </motion.div>
 
-        {/* Hover content (description + image) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isActive ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.25 }}
           className="absolute inset-0 flex items-center justify-between gap-8"
         >
-          <p className="text-lg md:text-2xl lg:text-3xl text-gray-300 m-0 flex-1">{experience.description}</p>
+          <p className="text-lg md:text-2xl lg:text-3xl xl:text-3xl text-gray-300 m-0 flex-1">
+            {experience.description}
+          </p>
 
-          <div className="relative h-16 w-16 md:h-20 md:w-20 overflow-hidden flex-shrink-0">
+          <div className="relative h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-24 xl:w-24 overflow-hidden flex-shrink-0">
             <Image
               src={experience.image || "/placeholder.svg"}
               alt={`${experience.title1} ${experience.title2}`}
               fill
               className="object-contain"
-              sizes="(min-width: 768px) 80px, 64px"
+              sizes="(min-width: 1024px) 96px, (min-width: 768px) 80px, 64px"
               priority={false}
             />
           </div>

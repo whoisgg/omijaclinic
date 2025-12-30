@@ -93,31 +93,29 @@ export default function FeaturedSection() {
 
   return (
     <section ref={sectionRef} data-section="featured" className="flex flex-col lg:flex-row lg:items-stretch bg-white">
-      <div className="flex flex-1 flex-col justify-center px-6 py-16 md:py-20 lg:py-32 lg:px-12 xl:px-20 max-w-4xl lg:max-w-none">
-        <h2
-          ref={headingRef}
-          className="mb-12 text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase"
-        >
-          El wellaging es una forma consciente de acompañar el paso del tiempo.
-        </h2>
+      <div className="flex flex-1 flex-col justify-between px-6 py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 lg:px-12 xl:px-16 2xl:px-20 max-w-4xl lg:max-w-none">
+        <div>
+          <h2
+            ref={headingRef}
+            className="mb-12 text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-bold leading-tight uppercase"
+          >
+            El wellaging es una forma consciente de acompañar el paso del tiempo.
+          </h2>
 
-        <div className="space-y-8 mb-16">
-          <p ref={paragraph1Ref} className="text-lg md:text-xl leading-relaxed text-pretty text-foreground/90">
-            En OMIYA Clinic, entendemos el bienestar como un equilibrio entre salud, calma y cuidado, priorizando lo
-            natural por sobre la corrección.
-          </p>
+          <div className="space-y-8 mb-16">
+            <p ref={paragraph1Ref} className="text-lg md:text-xl leading-relaxed text-pretty text-foreground/90">
+              En OMIYA Clinic, entendemos el bienestar como un equilibrio entre salud, calma y cuidado, priorizando lo
+              natural por sobre la corrección.
+            </p>
 
-          <p ref={paragraph2Ref} className="text-lg md:text-xl leading-relaxed text-pretty text-foreground/90">
-            Bajo la guía clínica de la <span className="font-semibold">Dra. Antonieta Ortega</span>, cada tratamiento se
-            diseña de manera personalizada, respetando el ritmo y las necesidades de cada etapa de la vida.
-          </p>
+            <p ref={paragraph2Ref} className="text-lg md:text-xl leading-relaxed text-pretty text-foreground/90">
+              Bajo la guía clínica de la <span className="font-semibold">Dra. Antonieta Ortega</span>, cada tratamiento
+              se diseña de manera personalizada, respetando el ritmo y las necesidades de cada etapa de la vida.
+            </p>
+          </div>
         </div>
 
-        <a
-          ref={nameRef}
-          href="/acerca-de"
-          className="mt-auto border-t pt-8 hover:opacity-70 transition-opacity duration-300"
-        >
+        <a ref={nameRef} href="/acerca-de" className="border-t pt-8 hover:opacity-70 transition-opacity duration-300">
           <p className="text-xs font-semibold tracking-widest mb-1.5 uppercase">Dra. Antonieta Ortega</p>
           <p className="text-xs text-muted-foreground tracking-wide uppercase">
             Endodoncia · Armonización Orofacial · Cosmetóloga
@@ -125,7 +123,7 @@ export default function FeaturedSection() {
         </a>
       </div>
 
-      <div ref={imageRef} className="h-[500px] flex-1 lg:h-auto lg:min-h-[700px]">
+      <div ref={imageRef} className="h-[500px] flex-1 lg:h-auto lg:min-h-[600px] lg:max-h-[800px] 2xl:max-h-[900px]">
         <Image
           src="/images/professional-portrait.jpg"
           alt="Dra. Antonieta Ortega"
