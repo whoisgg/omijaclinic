@@ -49,7 +49,9 @@ export default function ExperienceSection() {
     <section className="py-20 px-6 md:py-24 lg:py-28 xl:py-32 2xl:py-36 bg-black">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <p className="mb-4 text-sm font-normal uppercase tracking-widest text-gray-400">FORMACIÓN</p>
+          <p className="mb-6 text-base font-normal uppercase tracking-widest text-gray-400 md:mb-8 md:text-lg lg:mb-8">
+            FORMACIÓN
+          </p>
         </ScrollReveal>
 
         <div className="space-y-0">

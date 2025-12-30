@@ -65,8 +65,7 @@ export default function IkigaiSection() {
   return (
     <section className="bg-white px-6 py-20 md:py-32 lg:py-40">
       <div className="mx-auto w-full max-w-6xl">
-        {/* Eyebrow */}
-        <p className="mb-10 text-xs font-medium uppercase tracking-[0.28em] text-slate-500 md:mb-12 lg:mb-14">
+        <p className="mb-6 text-sm font-medium uppercase tracking-[0.28em] text-slate-500 md:mb-8 md:text-base lg:mb-8">
           Mi Ikigai
         </p>
 
