@@ -41,7 +41,7 @@ export function LineReveal({ children, className = "" }: LineRevealProps) {
   return (
     <div ref={containerRef} className={className}>
       {children}
-      <div className="line mt-4 h-px w-full origin-left bg-foreground" />
+      <div className="line mt-4 h-px w-full origin-left bg-gray-700" />
     </div>
   )
 }

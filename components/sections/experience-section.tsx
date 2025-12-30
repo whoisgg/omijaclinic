@@ -46,10 +46,10 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="py-32 px-6 bg-[#f5f5f0]">
+    <section className="py-32 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <p className="mb-4 text-sm font-normal uppercase tracking-widest text-gray-500">FORMACIÓN</p>
+          <p className="mb-4 text-sm font-normal uppercase tracking-widest text-gray-400">FORMACIÓN</p>
         </ScrollReveal>
 
         <div className="space-y-0">
@@ -83,8 +83,12 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
           transition={{ duration: 0.25 }}
           className="flex items-center justify-start"
         >
-          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 mr-2 md:mr-3">{experience.title1}</p>
-          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 ml-2 md:ml-3">{experience.title2}</p>
+          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 mr-2 md:mr-3 text-white">
+            {experience.title1}
+          </p>
+          <p className="text-xl md:text-4xl lg:text-5xl font-bold uppercase m-0 ml-2 md:ml-3 text-white">
+            {experience.title2}
+          </p>
         </motion.div>
 
         {/* Hover content (description + image) */}
@@ -94,7 +98,7 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
           transition={{ duration: 0.25 }}
           className="absolute inset-0 flex items-center justify-between gap-8"
         >
-          <p className="text-lg md:text-2xl lg:text-3xl text-gray-700 m-0 flex-1">{experience.description}</p>
+          <p className="text-lg md:text-2xl lg:text-3xl text-gray-300 m-0 flex-1">{experience.description}</p>
 
           <div className="relative h-16 w-16 md:h-20 md:w-20 overflow-hidden flex-shrink-0">
             <Image
