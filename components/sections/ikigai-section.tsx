@@ -77,9 +77,7 @@ export default function IkigaiSection() {
           {splitWords(phrase)}
         </div>
 
-        {/* Divider */}
-        <div className="mt-12 h-px w-full bg-slate-100 md:mt-14 lg:mt-16" />
-      </div>
+
     </section>
   )
 }
