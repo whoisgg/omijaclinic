@@ -6,7 +6,8 @@ import Image from "next/image"
 
 export function MaskEntryLoader() {
   const [visible, setVisible] = useState(false)
-  const [isReady, setIsReady] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
     const hasShown = sessionStorage.getItem("mask-loader-shown")
@@ -15,45 +16,62 @@ export function MaskEntryLoader() {
     sessionStorage.setItem("mask-loader-shown", "true")
     setVisible(true)
 
-    const checkResourcesLoaded = () => {
-      // Wait for DOM content to be loaded
-      if (document.readyState === "complete") {
-        // Give a bit more time for videos and heavy assets to start loading
-        setTimeout(() => {
-          setIsReady(true)
-        }, 800)
-      } else {
-        window.addEventListener("load", () => {
-          setTimeout(() => {
-            setIsReady(true)
-          }, 800)
-        })
-      }
+    const loadedResources = 0
+    const totalResources =
+      document.images.length + document.querySelectorAll('video, link[rel="stylesheet"], script').length
+    const resourcesPerFrame = Math.max(1, Math.ceil(totalResources / 50))
+
+    // Animate progress bar
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        const newProgress = Math.min(prev + resourcesPerFrame / totalResources, 1)
+        if (newProgress >= 1) {
+          clearInterval(progressInterval)
+          setTimeout(() => setIsComplete(true), 500)
+        }
+        return newProgress
+      })
+    }, 30)
+
+    // Also wait for actual load event
+    const handleLoad = () => {
+      clearInterval(progressInterval)
+      setProgress(1)
+      setTimeout(() => setIsComplete(true), 500)
     }
 
-    checkResourcesLoaded()
+    if (document.readyState === "complete") {
+      handleLoad()
+    } else {
+      window.addEventListener("load", handleLoad)
+    }
+
+    return () => {
+      clearInterval(progressInterval)
+      window.removeEventListener("load", handleLoad)
+    }
   }, [])
 
   if (!visible) return null
 
   return (
     <motion.div
-      initial={{ y: 0 }}
-      animate={isReady ? { y: "-100%" } : { y: 0 }}
+      initial={{ opacity: 1 }}
+      animate={isComplete ? { opacity: 0 } : { opacity: 1 }}
       transition={{
-        duration: 1.2,
+        duration: 1,
         ease: [0.76, 0, 0.24, 1],
       }}
       onAnimationComplete={() => {
-        if (isReady) setVisible(false)
+        if (isComplete) setVisible(false)
       }}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-white pointer-events-none"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#e8e8e8]"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-[400px] h-[280px] md:w-[600px] md:h-[400px]"
+        className="relative w-[400px] h-[280px] md:w-[600px] md:h-[400px] mb-12"
       >
         <Image
           src="/images/omiyaclinic-logovariaciones-mesa-20de-20trabajo-201-21.png"
@@ -63,6 +81,15 @@ export function MaskEntryLoader() {
           priority
         />
       </motion.div>
+
+      <div className="w-[300px] md:w-[400px] h-[2px] bg-[#C5A059]/20 rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-[#C5A059] origin-left"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: progress }}
+          transition={{ duration: 0.3, ease: "linear" }}
+        />
+      </div>
     </motion.div>
   )
 }
