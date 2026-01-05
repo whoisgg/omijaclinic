@@ -22,46 +22,25 @@ export function MaskEntryLoader() {
 
     sessionStorage.setItem("mask-loader-shown", "true")
 
-    const totalResources =
-      document.images.length + document.querySelectorAll('video, link[rel="stylesheet"], script').length
-    const resourcesPerFrame = Math.max(1, Math.ceil(totalResources / 50))
+    const loadingDuration = 2500 // 2.5 seconds
+    const startTime = Date.now()
 
-    // Animate progress bar
+    // Animate progress bar smoothly over 2.5 seconds
     const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        const newProgress = Math.min(prev + resourcesPerFrame / totalResources, 1)
-        if (newProgress >= 1) {
-          clearInterval(progressInterval)
-          setTimeout(() => {
-            setIsComplete(true)
-            document.body.style.overflow = "auto"
-            document.body.classList.add("loader-complete")
-          }, 500)
-        }
-        return newProgress
-      })
-    }, 30)
+      const elapsed = Date.now() - startTime
+      const newProgress = Math.min(elapsed / loadingDuration, 1)
+      setProgress(newProgress)
 
-    // Also wait for actual load event
-    const handleLoad = () => {
-      clearInterval(progressInterval)
-      setProgress(1)
-      setTimeout(() => {
+      if (newProgress >= 1) {
+        clearInterval(progressInterval)
         setIsComplete(true)
         document.body.style.overflow = "auto"
         document.body.classList.add("loader-complete")
-      }, 500)
-    }
-
-    if (document.readyState === "complete") {
-      handleLoad()
-    } else {
-      window.addEventListener("load", handleLoad)
-    }
+      }
+    }, 16) // ~60fps
 
     return () => {
       clearInterval(progressInterval)
-      window.removeEventListener("load", handleLoad)
       document.body.style.overflow = "auto"
     }
   }, [])
@@ -97,12 +76,7 @@ export function MaskEntryLoader() {
       </motion.div>
 
       <div className="w-[300px] md:w-[400px] h-[2px] bg-[#C5A059]/20 rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-[#C5A059] origin-left"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: progress }}
-          transition={{ duration: 0.3, ease: "linear" }}
-        />
+        <motion.div className="h-full bg-[#C5A059] origin-left" style={{ transform: `scaleX(${progress})` }} />
       </div>
     </motion.div>
   )
