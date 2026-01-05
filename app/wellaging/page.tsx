@@ -70,9 +70,11 @@ export default function WellagingPage() {
         data-section="hero"
       >
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 mix-blend-overlay">
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Animate_waterfall_and_1080p_202601051001-OmJEPz6ipVWS13LrgQ2Wt0xYBUnC34.mp4" type="video/mp4" />
-          </video>
+          <img
+            src="/images/animate-waterfall-and-1080p-202601051001-ezgif.jpeg"
+            alt="Japanese garden waterfall"
+            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent" />
         </div>
 
