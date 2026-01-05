@@ -83,25 +83,18 @@ export default function AboutHero() {
       </div>
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          {/* Left: Title */}
-          <div className="lg:col-span-7" style={{ perspective: "1000px" }}>
-            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">Acerca de</span>
-            <h1
-              ref={titleRef}
-              className="text-white text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.95] mb-0"
-            >
-              <span className="hero-title-line block">DRA.</span>
-              <span className="hero-title-line block">ANTONIETA ORTEGA</span>
-            </h1>
-          </div>
-
-          {/* Right: Description */}
-          <div className="lg:col-span-5 flex flex-col justify-end h-full">
-            <p ref={subtitleRef} className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-md">
-              Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
-            </p>
-          </div>
+        <div className="max-w-4xl" style={{ perspective: "1000px" }}>
+          <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">Acerca de</span>
+          <h1
+            ref={titleRef}
+            className="text-white text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.95] mb-8"
+          >
+            <span className="hero-title-line block">DRA.</span>
+            <span className="hero-title-line block">ANTONIETA ORTEGA</span>
+          </h1>
+          <p ref={subtitleRef} className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+            Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
+          </p>
         </div>
       </div>
 

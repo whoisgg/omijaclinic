@@ -39,24 +39,17 @@ export default function WellagingPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            {/* Left: Title */}
-            <div className="lg:col-span-7">
-              <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
-                El Arte de Vivir
-              </span>
-              <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] mb-6">
-                WELL AGING
-              </h1>
-            </div>
-
-            {/* Right: Description */}
-            <div className="lg:col-span-5 flex flex-col justify-end h-full">
-              <p className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-md">
-                Redefiniendo el tiempo a través de la salud interna, la belleza externa y la paz mental. Una ingeniería
-                holística de tu mejor versión.
-              </p>
-            </div>
+          <div className="max-w-4xl">
+            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
+              El Arte de Vivir
+            </span>
+            <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] mb-8">
+              WELL AGING
+            </h1>
+            <p className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+              Redefiniendo el tiempo a través de la salud interna, la belleza externa y la paz mental. Una ingeniería
+              holística de tu mejor versión.
+            </p>
           </div>
         </div>
 
@@ -216,6 +209,42 @@ export default function WellagingPage() {
                 Más que un evento, es un espacio de conexión, aprendizaje y autocuidado, creado para inspirar a cada
                 mujer a sentirse acompañada y empoderada en su proceso de evolución.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section for Wellaging Consultation */}
+      <section className="py-24 md:py-32 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-12 md:p-16 lg:p-20 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left: Heading and Description */}
+              <div className="lg:col-span-7">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                  Invierte en tu <span className="text-[#C5A059]">yo del futuro.</span>
+                </h2>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
+                  Agenda una consulta con nuestras especialistas para diseñar tu camino personalizado hacia el
+                  wellaging.
+                </p>
+              </div>
+
+              {/* Right: CTA Buttons */}
+              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4">
+                <a
+                  href="#reservar"
+                  className="bg-[#C5A059] hover:bg-[#B08F4A] text-white font-semibold text-sm tracking-wider uppercase px-8 py-4 rounded-md transition-colors text-center"
+                >
+                  Reservar Cita
+                </a>
+                <a
+                  href="#contacto"
+                  className="bg-white hover:bg-gray-50 text-black font-semibold text-sm tracking-wider uppercase px-8 py-4 rounded-md border-2 border-black transition-colors text-center"
+                >
+                  Contáctanos
+                </a>
+              </div>
             </div>
           </div>
         </div>
