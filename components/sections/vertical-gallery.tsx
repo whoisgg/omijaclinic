@@ -16,7 +16,7 @@ export default function VerticalGallery() {
   return (
     <>
       {/* Desktop - Collage Layout */}
-      <div className="relative h-[100vh] bg-[#f3f3ef] hidden sm:block">
+      <div className="relative bg-[#f3f3ef] hidden sm:block py-24 md:py-32">
         <div className="sticky top-0 h-screen overflow-hidden">
           {pictures.map((src, index) => {
             const style =
@@ -53,7 +53,7 @@ export default function VerticalGallery() {
       </div>
 
       {/* Mobile - Stacked Layout */}
-      <div className="bg-[#f3f3ef] py-12 px-4 sm:hidden">
+      <div className="bg-[#f3f3ef] py-16 md:py-24 px-6 sm:hidden">
         <div className="flex flex-col gap-6 max-w-lg mx-auto">
           {pictures.map((src, index) => (
             <div key={index} className="relative w-full aspect-[4/3] group">

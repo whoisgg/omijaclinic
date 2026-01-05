@@ -93,16 +93,16 @@ export default function FeaturedSection() {
 
   return (
     <section ref={sectionRef} data-section="featured" className="flex flex-col lg:flex-row lg:items-stretch bg-white">
-      <div className="flex flex-1 flex-col justify-between px-6 py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 lg:px-12 xl:px-16 2xl:px-20 max-w-4xl lg:max-w-none">
+      <div className="flex flex-1 flex-col justify-between px-6 md:px-8 lg:px-12 py-24 md:py-32 max-w-4xl lg:max-w-none">
         <div>
           <h2
             ref={headingRef}
-            className="mb-12 text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-bold leading-tight uppercase"
+            className="mb-12 text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase"
           >
             El wellaging es una forma consciente de acompañar el paso del tiempo.
           </h2>
 
-          <div className="space-y-8 mb-16">
+          <div className="space-y-6 mb-12">
             <p ref={paragraph1Ref} className="text-lg md:text-xl leading-relaxed text-pretty text-foreground/90">
               En OMIYA Clinic, entendemos el bienestar como un equilibrio entre salud, calma y cuidado, priorizando lo
               natural por sobre la corrección.
@@ -123,7 +123,7 @@ export default function FeaturedSection() {
         </a>
       </div>
 
-      <div ref={imageRef} className="h-[500px] flex-1 lg:h-auto lg:min-h-[600px] lg:max-h-[800px] 2xl:max-h-[900px]">
+      <div ref={imageRef} className="h-[500px] flex-1 lg:h-auto lg:min-h-[600px] lg:max-h-[800px]">
         <Image
           src="/images/professional-portrait.jpg"
           alt="Dra. Antonieta Ortega"

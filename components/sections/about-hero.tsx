@@ -63,7 +63,11 @@ export default function AboutHero() {
   }, [])
 
   return (
-    <section ref={sectionRef} data-section="hero" className="relative w-full h-screen bg-black overflow-hidden">
+    <section
+      ref={sectionRef}
+      data-section="hero"
+      className="relative w-full min-h-screen bg-black overflow-hidden flex items-end pb-24 lg:pb-32"
+    >
       {/* Hero Image - First Frame */}
       <div className="absolute inset-0">
         <img
@@ -74,25 +78,30 @@ export default function AboutHero() {
           decoding="async"
         />
 
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-start px-6 lg:px-12">
-        <div className="max-w-4xl" style={{ perspective: "1000px" }}>
-          <h1
-            ref={titleRef}
-            className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight text-balance"
-          >
-            <span className="hero-title-line block">Dra.</span>
-            <span className="hero-title-line block">Antonieta Ortega</span>
-          </h1>
-          <p
-            ref={subtitleRef}
-            className="text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-2xl text-pretty"
-          >
-            Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
-          </p>
+      <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          {/* Left: Title */}
+          <div className="lg:col-span-7" style={{ perspective: "1000px" }}>
+            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">Acerca de</span>
+            <h1
+              ref={titleRef}
+              className="text-white text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.95] mb-0"
+            >
+              <span className="hero-title-line block">DRA.</span>
+              <span className="hero-title-line block">ANTONIETA ORTEGA</span>
+            </h1>
+          </div>
+
+          {/* Right: Description */}
+          <div className="lg:col-span-5 flex flex-col justify-end h-full">
+            <p ref={subtitleRef} className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-md">
+              Cirujano Dentista con especialización en Endodoncia y Armonización Orofacial.
+            </p>
+          </div>
         </div>
       </div>
 

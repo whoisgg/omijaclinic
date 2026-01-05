@@ -39,7 +39,7 @@ export default function WellagingPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-t border-white/20 pt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             {/* Left: Title */}
             <div className="lg:col-span-7">
               <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
@@ -70,8 +70,8 @@ export default function WellagingPage() {
       </section>
 
       {/* Merged Manifesto and Acerca de Wellaging Section */}
-      <section className="relative py-32 px-6 md:px-12 lg:px-24 bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 max-w-[1400px] mx-auto">
+      <section className="relative py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1400px] mx-auto">
           {/* Left: Sticky Title */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
@@ -117,8 +117,8 @@ export default function WellagingPage() {
       <WellagingPillars />
 
       {/* Why Join Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-24 md:py-32 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-8 md:mb-12 text-center">
               <span className="font-normal">PORQUÉ</span> <span className="italic font-medium">UNIRTE?</span>
@@ -150,8 +150,8 @@ export default function WellagingPage() {
       </section>
 
       {/* Jornadas Wellaging Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
               {/* Left Column */}

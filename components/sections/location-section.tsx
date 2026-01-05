@@ -4,9 +4,9 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export default function LocationSection() {
   return (
-    <section className="relative bg-background py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+    <section className="relative bg-background py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase text-foreground mb-8">

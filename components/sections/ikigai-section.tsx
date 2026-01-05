@@ -63,11 +63,9 @@ export default function IkigaiSection() {
   }
 
   return (
-    <section className="bg-white px-6 py-20 md:py-32 lg:py-40">
+    <section className="bg-white px-6 md:px-8 lg:px-12 py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl">
-        <p className="mb-6 text-sm font-medium uppercase tracking-[0.28em] text-slate-500 md:mb-8 md:text-base lg:mb-8">
-          Mi Ikigai
-        </p>
+        <p className="mb-8 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] md:text-base">Mi Ikigai</p>
 
         {/* Animated text with gradient opacity */}
         <div

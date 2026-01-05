@@ -5,9 +5,9 @@ import Image from "next/image"
 
 export default function ContactSection() {
   return (
-    <section className="py-20 md:py-32 px-4 md:px-8 bg-white">
+    <section className="py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-lg overflow-hidden">
             <Image
               src="/images/screenshot-202025-12-24-20100619.png"

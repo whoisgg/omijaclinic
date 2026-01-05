@@ -46,12 +46,10 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="py-20 px-6 md:py-24 lg:py-28 xl:py-32 2xl:py-36 bg-black">
+    <section className="py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-black" data-section="experience">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <p className="mb-6 text-base font-normal uppercase tracking-widest text-gray-400 md:mb-8 md:text-lg lg:mb-8">
-            FORMACIÓN
-          </p>
+          <p className="mb-8 text-base font-bold uppercase tracking-widest text-[#C5A059] md:text-lg">FORMACIÓN</p>
         </ScrollReveal>
 
         <div className="space-y-0">
@@ -102,13 +100,13 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
             {experience.description}
           </p>
 
-          <div className="relative h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-24 xl:w-24 overflow-hidden flex-shrink-0">
+          <div className="relative h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32 overflow-hidden flex-shrink-0 bg-white rounded-md p-2">
             <Image
               src={experience.image || "/placeholder.svg"}
               alt={`${experience.title1} ${experience.title2}`}
               fill
-              className="object-contain"
-              sizes="(min-width: 1024px) 96px, (min-width: 768px) 80px, 64px"
+              className="object-contain p-2"
+              sizes="(min-width: 1280px) 128px, (min-width: 1024px) 112px, (min-width: 768px) 96px, 80px"
               priority={false}
             />
           </div>

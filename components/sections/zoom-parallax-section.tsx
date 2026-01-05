@@ -85,7 +85,7 @@ export default function ZoomParallaxSection() {
       </div>
 
       {/* Mobile */}
-      <div className="bg-white py-12 px-4 sm:hidden">
+      <div className="bg-white py-16 md:py-24 px-6 sm:hidden">
         <div className="flex flex-col gap-6 max-w-lg mx-auto">
           {pictures.map((src, index) => (
             <div key={index} className="relative w-full aspect-[4/3] group">

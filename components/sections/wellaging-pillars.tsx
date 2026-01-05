@@ -30,13 +30,15 @@ export default function WellagingPillars() {
   ]
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-24 md:py-32 bg-white">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Title */}
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-5xl md:text-7xl font-light tracking-tight">
-            PILARES DEL <span className="italic font-medium">WELLAGING</span>
+          <h2 className="text-5xl md:text-7xl tracking-tight">
+            <span className="font-bold text-black">PILARES DEL </span>
+            <span className="italic font-light text-[#C5A059]">Wellaging</span>
           </h2>
+          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-gray-500 mt-6">WELLAGING FRAMEWORK</p>
         </div>
 
         {/* Desktop Layout - Lotus Pattern */}

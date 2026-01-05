@@ -17,14 +17,17 @@ export default function Header() {
 
       const heroSection = document.querySelector('[data-section="hero"]')
       const promoSection = document.querySelector('[data-section="promo"]')
+      const experienceSection = document.querySelector('[data-section="experience"]')
 
       const heroRect = heroSection?.getBoundingClientRect()
       const promoRect = promoSection?.getBoundingClientRect()
+      const experienceRect = experienceSection?.getBoundingClientRect()
 
       const inHero = heroRect && heroRect.top <= 100 && heroRect.bottom >= 0
       const inPromo = promoRect && promoRect.top <= 100 && promoRect.bottom >= 0
+      const inExperience = experienceRect && experienceRect.top <= 100 && experienceRect.bottom >= 0
 
-      if (inHero || inPromo) {
+      if (inHero || inPromo || inExperience) {
         setIsWhiteText(true)
       } else {
         setIsWhiteText(false)
@@ -94,7 +97,7 @@ export default function Header() {
             href="#follow"
             className={`text-[10px] md:text-base font-light tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
           >
-            Síguenos
+            Reservas
             <svg
               width="12"
               height="12"

@@ -50,8 +50,8 @@ export default function IntroSection() {
 
   return (
     <section ref={sectionRef} className="py-24 md:py-32 bg-black">
-      <div className="px-8 pr-8 md:pr-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+      <div className="px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           {/* Left side - Social links */}
           <div ref={socialRef} className="md:col-span-3">
             <nav className="flex flex-row md:flex-col gap-4 md:gap-2">
