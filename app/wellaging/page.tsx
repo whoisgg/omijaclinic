@@ -1,12 +1,17 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import Lenis from "@studio-freight/lenis"
+import { gsap } from "gsap"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import WellagingPillars from "@/components/sections/wellaging-pillars"
 
 export default function WellagingPage() {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const subtitleRef = useRef<HTMLParagraphElement>(null)
+  const taglineRef = useRef<HTMLSpanElement>(null)
+
   useEffect(() => {
     const lenis = new Lenis()
 
@@ -20,6 +25,40 @@ export default function WellagingPage() {
     return () => {
       lenis.destroy()
     }
+  }, [])
+
+  useEffect(() => {
+    if (!titleRef.current || !subtitleRef.current || !taglineRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.from(taglineRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.3,
+      })
+
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        y: 100,
+        rotationX: -45,
+        transformOrigin: "50% 100%",
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 0.5,
+      })
+
+      gsap.from(subtitleRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power2.out",
+        delay: 1.1,
+      })
+    })
+
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -39,14 +78,17 @@ export default function WellagingPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
-          <div className="max-w-4xl">
-            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
+          <div className="max-w-4xl" style={{ perspective: "1000px" }}>
+            <span ref={taglineRef} className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
               El Arte de Vivir
             </span>
-            <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] mb-8">
+            <h1
+              ref={titleRef}
+              className="text-white text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] mb-8"
+            >
               WELL AGING
             </h1>
-            <p className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+            <p ref={subtitleRef} className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
               Redefiniendo el tiempo a través de la salud interna, la belleza externa y la paz mental. Una ingeniería
               holística de tu mejor versión.
             </p>
