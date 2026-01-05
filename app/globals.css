@@ -90,6 +90,25 @@
     @apply bg-background text-foreground;
   }
 
+  /* Prevent flash of content before loader appears */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e8e8e8;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  body.loader-complete::before {
+    opacity: 0;
+  }
+
   /* Adding typography system */
   /* Display Headings - Extra Large */
   .text-display {

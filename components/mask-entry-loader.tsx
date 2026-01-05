@@ -5,18 +5,23 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 
 export function MaskEntryLoader() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
   const [progress, setProgress] = useState(0)
   const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
     const hasShown = sessionStorage.getItem("mask-loader-shown")
-    if (hasShown) return
+    if (hasShown) {
+      setVisible(false)
+      document.body.style.overflow = "auto"
+      document.body.classList.add("loader-complete")
+      return
+    }
+
+    document.body.style.overflow = "hidden"
 
     sessionStorage.setItem("mask-loader-shown", "true")
-    setVisible(true)
 
-    const loadedResources = 0
     const totalResources =
       document.images.length + document.querySelectorAll('video, link[rel="stylesheet"], script').length
     const resourcesPerFrame = Math.max(1, Math.ceil(totalResources / 50))
@@ -27,7 +32,11 @@ export function MaskEntryLoader() {
         const newProgress = Math.min(prev + resourcesPerFrame / totalResources, 1)
         if (newProgress >= 1) {
           clearInterval(progressInterval)
-          setTimeout(() => setIsComplete(true), 500)
+          setTimeout(() => {
+            setIsComplete(true)
+            document.body.style.overflow = "auto"
+            document.body.classList.add("loader-complete")
+          }, 500)
         }
         return newProgress
       })
@@ -37,7 +46,11 @@ export function MaskEntryLoader() {
     const handleLoad = () => {
       clearInterval(progressInterval)
       setProgress(1)
-      setTimeout(() => setIsComplete(true), 500)
+      setTimeout(() => {
+        setIsComplete(true)
+        document.body.style.overflow = "auto"
+        document.body.classList.add("loader-complete")
+      }, 500)
     }
 
     if (document.readyState === "complete") {
@@ -49,6 +62,7 @@ export function MaskEntryLoader() {
     return () => {
       clearInterval(progressInterval)
       window.removeEventListener("load", handleLoad)
+      document.body.style.overflow = "auto"
     }
   }, [])
 
