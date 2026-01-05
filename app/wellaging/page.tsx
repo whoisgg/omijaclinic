@@ -5,7 +5,6 @@ import Lenis from "@studio-freight/lenis"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import WellagingPillars from "@/components/sections/wellaging-pillars"
-import Image from "next/image"
 
 export default function WellagingPage() {
   useEffect(() => {
@@ -27,103 +26,90 @@ export default function WellagingPage() {
     <main className="overflow-x-hidden max-w-[100vw] bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section
-        data-section="hero"
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-24 md:pt-32 pb-16 md:pb-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left: Image */}
-            <div className="relative w-full aspect-[3/4] md:aspect-[3/5] overflow-hidden rounded-lg">
-              <Image
-                src="/images/image.png"
-                alt="Dra. Antonieta Ortega - Wellaging"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded">
-                <p className="text-xs uppercase tracking-[0.2em] text-black font-light">Dra. Antonieta Ortega</p>
-              </div>
+      <section className="relative w-full min-h-screen flex items-end pb-24 lg:pb-32 overflow-hidden bg-zinc-900">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="w-full h-full bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-[20s] hover:scale-105"
+            style={{
+              backgroundImage: 'url("/images/cody-weaver-xu6peludcsy-unsplash.jpg")',
+              transform: "scale(1.05)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-t border-white/20 pt-8">
+            {/* Left: Title */}
+            <div className="lg:col-span-7">
+              <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
+                El Arte de Vivir
+              </span>
+              <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] mb-6">
+                WELL AGING
+              </h1>
             </div>
 
-            {/* Right: Text Content */}
-            <div className="space-y-6 md:space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-light tracking-tight">
-                  <span className="italic font-medium">Acerca de</span>
-                  <br />
-                  <span className="font-normal">WELLAGING</span>
-                </h1>
-              </div>
-
-              <div className="space-y-4 text-base md:text-lg leading-relaxed text-gray-700">
-                <p>
-                  Según los últimos estudios sobre factores que inciden en el envejecimiento tenemos que entre el{" "}
-                  <strong className="text-black font-semibold">70%</strong> y el{" "}
-                  <strong className="text-black font-semibold">80%</strong> de cómo envejecemos depende de nuestros
-                  hábitos y estilo de vida... lo que significa que{" "}
-                  <strong className="text-black font-semibold">TENEMOS EL PODER</strong> de{" "}
-                  <strong className="text-black font-semibold">VERNOS, SENTIRNOS</strong> y{" "}
-                  <strong className="text-black font-semibold">ENVEJECER MEJOR</strong>.
-                </p>
-              </div>
+            {/* Right: Description */}
+            <div className="lg:col-span-5 flex flex-col justify-end h-full">
+              <p className="text-stone-200/80 text-lg md:text-xl font-light leading-relaxed max-w-md">
+                Redefiniendo el tiempo a través de la salud interna, la belleza externa y la paz mental. Una ingeniería
+                holística de tu mejor versión.
+              </p>
             </div>
           </div>
         </div>
+
+        {/* Vertical Japanese Text */}
+        <div
+          className="absolute right-6 top-32 lg:right-12 lg:top-1/3 text-white/10 text-4xl lg:text-6xl font-serif select-none pointer-events-none"
+          style={{ writingMode: "vertical-rl", textOrientation: "upright", letterSpacing: "0.5em" }}
+        >
+          ウェルエイジング
+        </div>
       </section>
 
-      {/* About Wellaging Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            {/* Three Images Row */}
-            <div className="grid grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                <Image
-                  src="/sunset-yoga-meditation-silhouette.jpg"
-                  alt="Yoga y bienestar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                <Image src="/happy-woman-laughing-authentic.jpg" alt="Mujer feliz" fill className="object-cover" />
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                <Image
-                  src="/artistic-head-flowers-mental-health.jpg"
-                  alt="Salud mental"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+      {/* Merged Manifesto and Acerca de Wellaging Section */}
+      <section className="relative py-32 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 max-w-[1400px] mx-auto">
+          {/* Left: Sticky Title */}
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-[#C5A059] uppercase mb-6">Acerca de</h2>
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">Wellaging</h3>
             </div>
+          </div>
 
-            {/* Main Heading */}
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-6">
-                <span className="italic font-medium">Acerca de</span> WELLAGING
-              </h2>
-              <p className="text-lg md:text-xl leading-relaxed max-w-5xl mx-auto text-gray-700">
-                Iniciativa que busca cambiar la forma de cómo vemos el envejecimiento, pasando de un concepto
-                restrictivo como el "ANTIAGING" a una forma más positiva y natural:{" "}
-                <strong className="text-black font-semibold">"WELLAGING"</strong> (buen envejecer).
-              </p>
-            </div>
-
-            {/* Description */}
-            <div className="bg-gray-50 p-8 md:p-12 rounded-lg">
-              <p className="text-base md:text-lg leading-relaxed text-gray-700 text-center">
-                Generando contenido en redes sociales y actividades que buscan ACOMPAÑAR y EDUCAR a las mujeres en el
-                conocimiento de los factores que influyen en su proceso de envejecimiento, para que puedan tomar las
-                riendas de su cuerpo y generar pequeños cambios{" "}
-                <strong className="text-black font-semibold">saludables</strong>, con{" "}
-                <strong className="text-black font-semibold">consciencia</strong>,{" "}
-                <strong className="text-black font-semibold">conocimiento</strong> y{" "}
-                <strong className="text-black font-semibold">amor propio</strong>.
-              </p>
+          {/* Right: Content */}
+          <div className="lg:col-span-8">
+            <p className="text-2xl md:text-3xl lg:text-4xl text-zinc-900 font-light leading-tight mb-12">
+              El wellaging es una forma consciente de acompañar el paso del tiempo.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-200 pt-12">
+              <div>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  El wellaging propone una nueva forma de relacionarnos con el envejecimiento.
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed mt-4">
+                  Una mirada que prioriza la salud, el equilibrio y el bienestar integral, dejando atrás la lógica de la
+                  corrección y la perfección.
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  En OMIYA Clinic, el wellaging guía nuestra forma de acompañar a la mujer adulta.
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed mt-4">
+                  Cada tratamiento busca <strong className="text-black font-semibold">educar</strong>,{" "}
+                  <strong className="text-black font-semibold">cuidar</strong> y{" "}
+                  <strong className="text-black font-semibold">acompañar</strong> el proceso de envejecimiento de manera
+                  natural, con <strong className="text-black font-semibold">conciencia</strong>,{" "}
+                  <strong className="text-black font-semibold">conocimiento</strong> y{" "}
+                  <strong className="text-black font-semibold">amor propio</strong>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
