@@ -26,16 +26,14 @@ export default function WellagingPage() {
     <main className="overflow-x-hidden max-w-[100vw] bg-white">
       <Header />
 
-      <section className="relative w-full min-h-screen flex items-end pb-24 lg:pb-32 overflow-hidden bg-zinc-900">
-        {/* Background Image */}
+      <section
+        className="relative w-full min-h-screen flex items-end pb-24 lg:pb-32 overflow-hidden bg-zinc-900"
+        data-section="hero"
+      >
         <div className="absolute inset-0 z-0">
-          <div
-            className="w-full h-full bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-[20s] hover:scale-105"
-            style={{
-              backgroundImage: 'url("/images/cody-weaver-xu6peludcsy-unsplash.jpg")',
-              transform: "scale(1.05)",
-            }}
-          />
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 mix-blend-overlay">
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Animate_waterfall_and_1080p_202601051001-OmJEPz6ipVWS13LrgQ2Wt0xYBUnC34.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent" />
         </div>
 
@@ -64,7 +62,7 @@ export default function WellagingPage() {
 
         {/* Vertical Japanese Text */}
         <div
-          className="absolute right-6 top-32 lg:right-12 lg:top-1/3 text-white/10 text-4xl lg:text-6xl font-serif select-none pointer-events-none"
+          className="absolute right-6 top-32 lg:right-12 lg:top-1/3 text-white/70 text-4xl lg:text-6xl font-serif select-none pointer-events-none"
           style={{ writingMode: "vertical-rl", textOrientation: "upright", letterSpacing: "0.5em" }}
         >
           ウェルエイジング

@@ -45,7 +45,7 @@ export default function Header() {
 
   const menuItems = [
     { label: "Acerca de", href: "/acerca-de", image: "/images/hero-frames/frame_00_delay-0.04s.png" },
-    { label: "Well Aging", href: "/wellaging", image: "/luxury-fashion-products.jpg" },
+    { label: "Well Aging", href: "/wellaging", image: "/cody-weaver-xu6pELUdcsY-unsplash.jpg" },
     { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
   ]
 
@@ -81,7 +81,11 @@ export default function Header() {
                 }`}
               />
             </div>
-            <span className="text-xs md:text-sm font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
+            <span
+              className={`text-xs md:text-sm font-medium tracking-[0.2em] uppercase transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
+                isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
+              }`}
+            >
               Menu
             </span>
           </button>
