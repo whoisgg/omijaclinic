@@ -183,14 +183,45 @@ export default function Header() {
               <span>By</span>
               <span>Antonieta Ortega M</span>
             </div>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black text-xs font-bold tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
-            >
-              INSTAGRAM
-            </a>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:opacity-70 transition-opacity"
+                aria-label="Instagram"
+              >
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="26" height="26" rx="6" stroke="currentColor" strokeWidth="2.5" />
+                  <circle cx="16" cy="16" r="5.5" stroke="currentColor" strokeWidth="2.5" />
+                  <circle cx="24" cy="8" r="1.5" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:opacity-70 transition-opacity"
+                aria-label="Facebook"
+              >
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="26" height="26" rx="6" stroke="currentColor" strokeWidth="2.5" />
+                  <path
+                    d="M19 11h-2a3 3 0 0 0-3 3v2h-2v3h2v6h3v-6h2l1-3h-3v-2c0-.55.45-1 1-1h2v-3z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:opacity-70 transition-opacity font-bold text-2xl"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
+            </div>
           </div>
         </div>
       </div>

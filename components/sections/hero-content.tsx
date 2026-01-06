@@ -14,10 +14,10 @@ export default function HeroContent() {
               Clínica de Estética
             </span>
             <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9] mb-2">
-              <span className="font-medium italic instrument">Tu mejor versión,</span>
+              <span className="font-medium italic instrument">Acompañamos tu bienestar,</span>
             </h1>
             <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9] mb-8">
-              naturalmente
+              en cada etapa
             </h1>
 
             <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-6">
