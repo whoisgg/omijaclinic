@@ -51,13 +51,19 @@ export default function ServicesSection() {
 
       wheelTimeout.current = setTimeout(() => {
         if (e.deltaY < 0) {
+          // Scroll up - next card
           setCurrentIndex((prev) => {
             const next = (prev + 1) % treatments.length
             setExpandedCard(treatments[next].id)
             return next
           })
         } else if (e.deltaY > 0) {
-          setExpandedCard(null)
+          // Scroll down - previous card
+          setCurrentIndex((prev) => {
+            const previous = (prev - 1 + treatments.length) % treatments.length
+            setExpandedCard(treatments[previous].id)
+            return previous
+          })
         }
       }, 50)
     }
@@ -205,49 +211,39 @@ export default function ServicesSection() {
                         <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-normal">
                           {treatment.longDescription}
                         </p>
-                        <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
-                          Agenda Tu Consulta
-                        </button>
+
+                        <div className="flex items-center gap-4">
+                          <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
+                            Agenda Tu Consulta
+                          </button>
+                          <button
+                            onClick={() => setExpandedCard(null)}
+                            className="w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors"
+                            aria-label="Cerrar"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <line x1="18" y1="6" x2="6" y2="18" />
+                              <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                          </button>
+                        </div>
 
                         <div className="mt-12 pt-8 border-t border-white/30">
                           <p className="text-xs opacity-70 font-light">
-                            Desplázate hacia arriba para ver más tratamientos • Desplázate hacia abajo para cerrar
+                            Desplázate hacia arriba o abajo para cambiar entre tratamientos
                           </p>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Close Button */}
-                    <button
-                      onClick={() => setExpandedCard(null)}
-                      className="absolute top-20 md:top-24 right-6 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors z-50"
-                      aria-label="Close"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                      </svg>
-                    </button>
-
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
-                      {treatments.map((_, idx) => (
-                        <div
-                          key={idx}
-                          className={`w-2 h-2 rounded-full transition-all ${
-                            currentIndex === idx ? "bg-white w-8" : "bg-white/40"
-                          }`}
-                        />
-                      ))}
                     </div>
                   </motion.div>
                 ))}

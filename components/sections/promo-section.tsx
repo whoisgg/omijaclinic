@@ -35,10 +35,16 @@ export default function PromoSection() {
         </motion.div>
       </div>
 
-      <p className="absolute bottom-12 right-6 z-10 max-w-xs text-xl text-white sm:max-w-md sm:text-2xl md:max-w-lg md:text-3xl lg:max-w-xl lg:text-4xl xl:max-w-5xl xl:text-5xl text-pretty">
-        OMIYA (大宮) significa gran santuario en japonés y hace referencia a la ciudad reconocida como cuna del bonsái.
-        Un símbolo de respeto, paciencia y armonía entre el ser humano y la naturaleza.
-      </p>
+      <div className="relative z-10 px-6 text-center max-w-5xl mx-auto">
+        <p className="text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-pretty leading-relaxed">
+          <span>OMIYA (大宮) significa </span>
+          <span className="text-[#D4AF37]">gran santuario</span>
+          <span> en japonés y hace referencia a la ciudad reconocida como cuna del bonsái. Un símbolo de </span>
+          <span className="text-[#D4AF37]">respeto, paciencia y armonía</span>
+          <span> entre el ser humano y la naturaleza.</span>
+        </p>
+      </div>
+      {/* </CHANGE> */}
     </section>
   )
 }
