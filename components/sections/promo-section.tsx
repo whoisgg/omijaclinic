@@ -22,14 +22,16 @@ export default function PromoSection() {
       <div className="fixed left-0 top-[-10vh] h-[120vh] w-full">
         <motion.div style={{ y }} className="relative h-full w-full">
           <Image
-            src="/images/clinca.webp"
+            src="/images/bonsai-tree-festival-stock.jpg"
             fill
-            alt="Omija Clinic Reception"
-            className="object-cover object-[10%_center] md:object-left"
+            alt="Bonsai Tree - Symbol of Omiya"
+            className="object-cover object-center"
             quality={95}
             priority
             sizes="100vw"
           />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50" />
         </motion.div>
       </div>
 

@@ -1,9 +1,8 @@
 "use client"
 
 import type React from "react"
-
+import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { MeshGradient } from "@paper-design/shaders-react"
 
 interface ShaderBackgroundProps {
   children: React.ReactNode
@@ -61,20 +60,18 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Background Shaders */}
-      <MeshGradient
-        className="absolute inset-0 w-full h-full"
-        colors={["#1a1a1a", "#d4af37", "#f5f5dc", "#c9a961", "#8b7355"]}
-        speed={0.3}
-        backgroundColor="#1a1a1a"
+      <Image
+        src="/images/clinca.webp"
+        fill
+        alt="Omiya Clinic"
+        className="object-cover object-[10%_center] md:object-[20%_center] lg:object-left"
+        quality={95}
+        priority
+        sizes="100vw"
       />
-      <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-60"
-        colors={["#1a1a1a", "#f5f5dc", "#d4af37", "#1a1a1a"]}
-        speed={0.2}
-        wireframe="true"
-        backgroundColor="transparent"
-      />
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {children}
     </div>
