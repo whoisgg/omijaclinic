@@ -10,9 +10,7 @@ export default function HeroContent() {
           {/* Left: Title */}
           {/* Right: Description & CTAs */}
           <div className="max-w-4xl">
-            <span className="text-[#C5A059] font-bold tracking-widest uppercase text-xs mb-4 block">
-              Clínica de Estética
-            </span>
+         
             <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9] mb-2">
               <span className="font-medium italic instrument">Acompañamos tu bienestar,</span>
             </h1>
@@ -21,7 +19,7 @@ export default function HeroContent() {
             </h1>
 
             <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-6">
-              Tratamientos estéticos que realzan tu belleza auténtica
+              Tratamientos que realzan tu belleza auténtica
             </p>
 
             <div className="flex items-center gap-3 flex-wrap">
