@@ -23,9 +23,11 @@ export default function Header() {
       const promoRect = promoSection?.getBoundingClientRect()
       const experienceRect = experienceSection?.getBoundingClientRect()
 
-      const inHero = heroRect && heroRect.top <= 100 && heroRect.bottom >= 0
-      const inPromo = promoRect && promoRect.top <= 100 && promoRect.bottom >= 0
-      const inExperience = experienceRect && experienceRect.top <= 100 && experienceRect.bottom >= 0
+      const threshold = window.innerHeight / 2
+
+      const inHero = heroRect && heroRect.top <= threshold && heroRect.bottom >= 0
+      const inPromo = promoRect && promoRect.top <= threshold && promoRect.bottom >= 0
+      const inExperience = experienceRect && experienceRect.top <= threshold && experienceRect.bottom >= 0
 
       if (inHero || inPromo || inExperience) {
         setIsWhiteText(true)
