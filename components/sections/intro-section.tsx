@@ -49,19 +49,19 @@ export default function IntroSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-black">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-white">
       <div className="px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           {/* Left side - Social links */}
           <div ref={socialRef} className="md:col-span-3">
             <nav className="flex flex-row md:flex-col gap-4 md:gap-2">
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors text-sm md:text-base">
+              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
                 Instagram
               </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors text-sm md:text-base">
+              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
                 Facebook
               </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors text-sm md:text-base">
+              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
                 TikTok
               </a>
             </nav>
@@ -71,7 +71,7 @@ export default function IntroSection() {
           <div className="md:col-span-9">
             <h2
               ref={headingRef}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight uppercase"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#D4AF37] leading-tight uppercase"
             >
               OMIYA CLINIC Un espacio donde bienestar, calma y salud se vuelven uno.
             </h2>

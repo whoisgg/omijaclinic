@@ -51,7 +51,7 @@ export default function Header() {
   const menuItems = [
     { label: "Acerca de", href: "/acerca-de", image: "/images/hero-frames/frame_00_delay-0.04s.png" },
     { label: "Well Aging", href: "/wellaging", image: "/images/wantoortega-07.png" },
-    { label: "Tratamientos", href: "#treatments", image: "/modern-interior-home.jpg" },
+    { label: "Tratamientos", href: "/tratamientos", image: "/modern-interior-home.jpg" },
   ]
 
   const textColor = isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
