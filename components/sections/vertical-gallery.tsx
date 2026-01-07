@@ -4,13 +4,13 @@ import Image from "next/image"
 
 export default function VerticalGallery() {
   const pictures = [
-    "/modern-dental-clinic.png",
-    "/dental-treatment-room.png",
+    "/images/e06339b3-15f7-4d98-8a6f.jpeg",
+    "/images/iamger4.png", // Replaced with cosmetology certificate photo
     "/images/iamge3.png",
-    "/patient-care-dentistry.jpg",
+    "/images/endo.jpeg", // Replaced with endodontics certificate photo
     "/images/image1.png",
-    "/smile-makeover-results.jpg",
-    "/aesthetic-dentistry.jpg",
+    "/images/image2.png",
+    "/images/korea.jpeg", // Replaced with MIKWANG Beauty Academy diploma photo
   ]
 
   return (
@@ -23,7 +23,8 @@ export default function VerticalGallery() {
               index === 0
                 ? { width: "28vw", height: "35vh", top: "10vh", left: "8vw" }
                 : index === 1
-                  ? { width: "22vw", height: "28vh", top: "50vh", left: "5vw" }
+                  ? // moved certificate box higher up on the page
+                    { width: "13vw", height: "27vh", top: "48vh", left: "18vw" }
                   : index === 2
                     ? { width: "25vw", height: "40vh", top: "15vh", left: "38vw" }
                     : index === 3
@@ -32,7 +33,7 @@ export default function VerticalGallery() {
                         ? { width: "26vw", height: "32vh", top: "8vh", right: "6vw" }
                         : index === 5
                           ? { width: "23vw", height: "35vh", top: "45vh", right: "8vw" }
-                          : { width: "18vw", height: "25vh", top: "35vh", left: "52vw" }
+                          : { width: "18vw", height: "25vh", top: "50vh", left: "52vw" }
 
             return (
               <div key={index} className="absolute" style={style}>
@@ -43,7 +44,11 @@ export default function VerticalGallery() {
                     fill
                     priority={index < 3}
                     sizes="(min-width: 640px) 30vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={
+                      index === 1
+                        ? "object-contain bg-white transition-transform duration-500 group-hover:scale-105"
+                        : "object-cover transition-transform duration-500 group-hover:scale-105"
+                    }
                   />
                 </div>
               </div>
@@ -62,7 +67,11 @@ export default function VerticalGallery() {
                 alt={`Dental practice image ${index + 1}`}
                 fill
                 sizes="100vw"
-                className="object-cover rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                className={
+                  index === 1
+                    ? "object-contain bg-white rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                    : "object-cover rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                }
               />
             </div>
           ))}
