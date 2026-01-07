@@ -51,7 +51,7 @@ export default function Header() {
   const menuItems = [
     { label: "Acerca de", href: "/acerca-de", image: "/images/hero-frames/frame_00_delay-0.04s.png" },
     { label: "Well Aging", href: "/wellaging", image: "/images/wantoortega-07.png" },
-    { label: "Tratamientos", href: "/tratamientos", image: "/modern-interior-home.jpg" },
+    { label: "Tratamientos", href: "/tratamientos", image: "/images/clinca.webp" },
   ]
 
   const textColor = isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
@@ -145,7 +145,11 @@ export default function Header() {
                 hoveredItem === item.label ? "opacity-100 scale-110" : "opacity-0 scale-100"
               }`}
             >
-              <img src={item.image || "/placeholder.svg"} alt={item.label} className="w-full h-full object-cover" />
+              <img
+                src={item.image || "/placeholder.svg"}
+                alt={item.label}
+                className={`w-full h-full object-cover ${item.label === "Tratamientos" ? "object-[10%_center]" : ""}`}
+              />
             </div>
           ))}
         </div>
