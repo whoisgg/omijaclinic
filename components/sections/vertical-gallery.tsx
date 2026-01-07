@@ -6,9 +6,9 @@ export default function VerticalGallery() {
   const pictures = [
     "/modern-dental-clinic.png",
     "/dental-treatment-room.png",
-    "/dental-equipment.png",
+    "/images/iamge3.png",
     "/patient-care-dentistry.jpg",
-    "/dental-technology.jpg",
+    "/images/image1.png",
     "/smile-makeover-results.jpg",
     "/aesthetic-dentistry.jpg",
   ]
