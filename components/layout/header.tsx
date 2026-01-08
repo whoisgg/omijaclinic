@@ -64,7 +64,7 @@ export default function Header() {
         <nav className="flex items-center justify-between relative">
           <a
             href="/"
-            className={`font-serif font-thin text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto`}
+            className={`font-serif font-thin text-lg md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto`}
           >
             Omiya Clinic
           </a>
@@ -87,7 +87,7 @@ export default function Header() {
               />
             </div>
             <span
-              className={`text-xs md:text-sm font-thin tracking-[0.2em] uppercase transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
+              className={`text-sm md:text-base font-thin tracking-[0.2em] uppercase transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 ${
                 isTreatmentExpanded ? "text-black" : isWhiteText ? "text-white" : "text-black"
               }`}
             >
@@ -97,7 +97,7 @@ export default function Header() {
 
           <a
             href="#follow"
-            className={`text-[10px] md:text-base font-sans font-thin tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
+            className={`text-xs md:text-lg font-sans font-thin tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
           >
             Reservas
             <svg

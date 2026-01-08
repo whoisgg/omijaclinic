@@ -100,11 +100,14 @@ export default function ServicesSection() {
   }
 
   return (
-    <section data-section="services" className="relative bg-neutral-100 py-20 md:py-32 px-6">
+    <section data-section="services" className="relative bg-neutral-100 py-20 md:py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16 md:mb-24">
           <div className="max-w-md">
+            <p className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-[#D4AF37] mb-4">
+              Áreas de Atención
+            </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-thin leading-tight uppercase tracking-tight mb-6">
               NUESTROS
               <br />
