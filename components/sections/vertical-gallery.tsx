@@ -5,12 +5,12 @@ import Image from "next/image"
 export default function VerticalGallery() {
   const pictures = [
     "/images/e06339b3-15f7-4d98-8a6f.jpeg",
-    "/images/iamger4.png", // Replaced with cosmetology certificate photo
+    "/images/cosme.png", // Updated to use the correct file extension
     "/images/iamge3.png",
-    "/images/endo.jpeg", // Replaced with endodontics certificate photo
+    "/images/endo.jpeg",
     "/images/image1.png",
     "/images/image2.png",
-    "/images/korea.jpeg", // Replaced with MIKWANG Beauty Academy diploma photo
+    "/images/korea.jpeg",
   ]
 
   return (
@@ -46,7 +46,7 @@ export default function VerticalGallery() {
                     sizes="(min-width: 640px) 30vw, 100vw"
                     className={
                       index === 1
-                        ? "object-contain bg-white transition-transform duration-500 group-hover:scale-105"
+                        ? "object-cover object-center bg-white transition-transform duration-500 group-hover:scale-105"
                         : "object-cover transition-transform duration-500 group-hover:scale-105"
                     }
                   />
@@ -69,8 +69,16 @@ export default function VerticalGallery() {
                 sizes="100vw"
                 className={
                   index === 1
-                    ? "object-contain bg-white rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
-                    : "object-cover rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                    ? "object-cover object-center bg-white rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                    : index === 2
+                      ? "object-cover object-[50%_30%] rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                      : index === 3
+                        ? "object-cover object-[50%_30%] rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                        : index === 5
+                          ? "object-cover object-[50%_30%] rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                          : index === 6
+                            ? "object-cover object-[50%_25%] rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                            : "object-cover rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
                 }
               />
             </div>
