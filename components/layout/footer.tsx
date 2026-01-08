@@ -37,10 +37,10 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 flex flex-col items-start gap-2 sm:mt-12 lg:mt-16">
-              <h1 className="whitespace-nowrap text-[12vw] font-bold leading-[0.8] tracking-tight text-white sm:text-[10vw] lg:text-[14vw]">
+              <h1 className="whitespace-nowrap text-[12vw] font-serif font-thin leading-[0.8] tracking-tight text-white sm:text-[10vw] lg:text-[14vw]">
                 OMIYA CLINIC
               </h1>
-              <p className="text-[11px] text-white sm:text-sm lg:text-base">©copyright</p>
+              <p className="text-[11px] font-sans font-thin text-white sm:text-sm lg:text-base">©copyright</p>
             </div>
           </div>
         </footer>

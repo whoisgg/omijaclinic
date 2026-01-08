@@ -18,18 +18,18 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-8 text-center lg:text-left flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase text-gray-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-thin leading-tight uppercase text-gray-900">
               ¿Te gustaría conversar?
             </h2>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p className="text-lg md:text-xl font-sans text-gray-600 leading-relaxed font-thin">
               Siempre estoy abierta a nuevas ideas, proyectos y colaboraciones alineadas con una visión consciente del
               bienestar.
             </p>
 
             <a
               href="mailto:doctora@antonietaortega.cl"
-              className="text-xl md:text-2xl font-normal text-gray-900 hover:text-gray-600 transition-colors"
+              className="text-xl md:text-2xl font-thin text-gray-900 hover:text-gray-600 transition-colors"
             >
               doctora@antonietaortega.cl
             </a>

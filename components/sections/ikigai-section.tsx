@@ -65,12 +65,11 @@ export default function IkigaiSection() {
   return (
     <section className="bg-white px-6 md:px-8 lg:px-12 py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl">
-        <p className="mb-8 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] md:text-base">Mi Ikigai</p>
+        <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#C5A059] md:text-base">Mi Ikigai</p>
 
-        {/* Animated text with gradient opacity */}
         <div
           ref={container}
-          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold leading-tight text-pretty uppercase"
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-thin leading-tight text-pretty uppercase"
         >
           {splitWords(phrase)}
         </div>

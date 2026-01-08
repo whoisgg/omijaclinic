@@ -35,10 +35,12 @@ export default function WellagingPillars() {
         {/* Title */}
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-5xl md:text-7xl tracking-tight">
-            <span className="font-bold text-black">PILARES DEL </span>
-            <span className="italic font-light text-[#C5A059]">Wellaging</span>
+            <span className="font-thin text-black">PILARES DEL </span>
+            <span className="italic font-thin text-[#C5A059]">Wellaging</span>
           </h2>
-          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-gray-500 mt-6">WELLAGING FRAMEWORK</p>
+          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-gray-500 mt-6 font-thin">
+            WELLAGING FRAMEWORK
+          </p>
         </div>
 
         {/* Desktop Layout - Lotus Pattern */}
@@ -81,32 +83,32 @@ export default function WellagingPillars() {
           <div className="relative" style={{ minHeight: "800px" }}>
             {/* Top Left */}
             <div className="absolute top-0 left-0 w-[280px] text-left">
-              <h3 className="text-xl font-medium mb-3 text-balance">{pillars[0].title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillars[0].description}</p>
+              <h3 className="text-xl font-thin mb-3 text-balance">{pillars[0].title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillars[0].description}</p>
             </div>
 
             {/* Top Right */}
             <div className="absolute top-0 right-0 w-[280px] text-right">
-              <h3 className="text-xl font-medium mb-3 text-balance">{pillars[1].title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillars[1].description}</p>
+              <h3 className="text-xl font-thin mb-3 text-balance">{pillars[1].title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillars[1].description}</p>
             </div>
 
             {/* Middle Left */}
             <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[280px] text-left">
-              <h3 className="text-xl font-medium mb-3 text-balance">{pillars[2].title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillars[2].description}</p>
+              <h3 className="text-xl font-thin mb-3 text-balance">{pillars[2].title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillars[2].description}</p>
             </div>
 
             {/* Middle Right */}
             <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[280px] text-right">
-              <h3 className="text-xl font-medium mb-3 text-balance">{pillars[3].title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillars[3].description}</p>
+              <h3 className="text-xl font-thin mb-3 text-balance">{pillars[3].title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillars[3].description}</p>
             </div>
 
             {/* Bottom Center */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[380px] text-center">
-              <h3 className="text-xl font-medium mb-3 text-balance">{pillars[4].title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillars[4].description}</p>
+              <h3 className="text-xl font-thin mb-3 text-balance">{pillars[4].title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillars[4].description}</p>
             </div>
           </div>
         </div>
@@ -115,8 +117,8 @@ export default function WellagingPillars() {
         <div className="md:hidden space-y-6">
           {pillars.map((pillar, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="text-lg font-medium mb-3 text-balance">{pillar.title}</h3>
-              <p className="text-sm leading-relaxed text-gray-600 text-balance">{pillar.description}</p>
+              <h3 className="text-lg font-thin mb-3 text-balance">{pillar.title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600 text-balance font-thin">{pillar.description}</p>
             </div>
           ))}
 

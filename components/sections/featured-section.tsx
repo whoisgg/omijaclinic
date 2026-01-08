@@ -143,30 +143,30 @@ export default function FeaturedSection() {
       {/* Right Column - Content */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20 lg:py-24">
         <div ref={subtitleRef} className="mb-8">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] font-sans" style={{ color: "#C5A059" }}>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] font-sans" style={{ color: "#C5A059" }}>
             Visión Clínica
           </p>
         </div>
 
         <h2
           ref={headingRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight text-balance uppercase"
+          className="text-4xl md:text-5xl lg:text-6xl font-serif font-thin mb-6 leading-tight text-balance uppercase"
         >
           El verdadero cuidado comienza comprendiendo la historia de cada paciente
         </h2>
 
-        {/* Quote */}
-        <p ref={quoteRef} className="text-lg md:text-xl font-sans italic mb-8 leading-relaxed text-gray-700">
-          En OMIYA, entendemos como wellaging a la forma consciente de acompañar a cada persona en su proceso de bienestar, con criterio clínico, respeto y sensibilidad.
+        <p ref={quoteRef} className="text-lg md:text-xl font-sans italic mb-8 leading-relaxed text-gray-700 font-thin">
+          En OMIYA, entendemos como wellaging a la forma consciente de acompañar a cada persona en su proceso de
+          bienestar, con criterio clínico, respeto y sensibilidad.
         </p>
 
-        {/* Body paragraphs */}
         <div className="space-y-6 mb-10">
-          <p ref={paragraph1Ref} className="text-base leading-relaxed text-gray-700 font-sans">
-           Cada decisión clínica se basa en la armonía entre salud, calma y precisión, priorizando siempre lo natural por sobre la corrección.
+          <p ref={paragraph1Ref} className="text-base leading-relaxed text-gray-700 font-sans font-thin">
+            Cada decisión clínica se basa en la armonía entre salud, calma y precisión, priorizando siempre lo natural
+            por sobre la corrección.
           </p>
 
-          <p ref={paragraph2Ref} className="text-base leading-relaxed text-gray-700 font-sans">
+          <p ref={paragraph2Ref} className="text-base leading-relaxed text-gray-700 font-sans font-thin">
             Nuestro enfoque busca crear un espacio donde el bienestar se construye de manera consciente, personalizada y
             sostenible en cada etapa de la vida.
           </p>
@@ -174,8 +174,8 @@ export default function FeaturedSection() {
 
         <div ref={signatureRef} className="flex items-start gap-3">
           <div className="flex flex-col">
-            <p className="text-xl font-sans font-semibold text-gray-900">Dra. Antonieta Ortega</p>
-            <p className="text-sm tracking-wider uppercase font-sans text-gray-500 mt-1">
+            <p className="text-xl font-sans font-thin text-gray-900">Dra. Antonieta Ortega</p>
+            <p className="text-sm tracking-wider uppercase font-sans text-gray-500 mt-1 font-thin">
               Directora Médica · Fundadora
             </p>
           </div>

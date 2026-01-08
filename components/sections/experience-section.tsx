@@ -49,7 +49,7 @@ export default function ExperienceSection() {
     <section className="py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-black" data-section="experience">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <p className="mb-8 text-base font-bold uppercase tracking-widest text-[#C5A059] md:text-lg">FORMACIÓN</p>
+          <p className="mb-8 text-base font-thin uppercase tracking-widest text-[#C5A059] md:text-lg">FORMACIÓN</p>
         </ScrollReveal>
 
         <div className="space-y-0">
@@ -82,10 +82,10 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
           transition={{ duration: 0.25 }}
           className="flex items-center justify-start"
         >
-          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold uppercase m-0 mr-2 md:mr-3 text-white">
+          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-serif font-thin uppercase m-0 mr-2 md:mr-3 text-white">
             {experience.title1}
           </p>
-          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold uppercase m-0 ml-2 md:ml-3 text-white">
+          <p className="text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-serif font-thin uppercase m-0 ml-2 md:ml-3 text-white">
             {experience.title2}
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ function ExperienceItem({ experience }: { experience: (typeof experiences)[0] })
           transition={{ duration: 0.25 }}
           className="absolute inset-0 flex items-center justify-between gap-8"
         >
-          <p className="text-lg md:text-2xl lg:text-3xl xl:text-3xl text-gray-300 m-0 flex-1">
+          <p className="text-lg md:text-2xl lg:text-3xl xl:text-3xl font-sans font-thin text-gray-300 m-0 flex-1">
             {experience.description}
           </p>
 

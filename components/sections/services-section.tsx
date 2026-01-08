@@ -105,12 +105,12 @@ export default function ServicesSection() {
         {/* Header Section */}
         <div className="mb-16 md:mb-24">
           <div className="max-w-md">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-thin leading-tight uppercase tracking-tight mb-6">
               NUESTROS
               <br />
               TRATAMIENTOS
             </h2>
-            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-normal">
+            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-sans font-thin">
               Ofrecemos tratamientos especializados que combinan salud y bienestar. Cada procedimiento es personalizado
               y realizado con dedicación, respeto y un profundo compromiso con tu cuidado integral.
             </p>
@@ -143,7 +143,7 @@ export default function ServicesSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h3 className="text-lg sm:text-xl font-semibold tracking-widest">
+                        <h3 className="text-lg sm:text-xl font-thin tracking-widest">
                           {treatment.title.toUpperCase()}
                         </h3>
                       </div>
@@ -158,11 +158,11 @@ export default function ServicesSection() {
         {/* Bottom CTA */}
         <div className="mt-16 md:mt-24 flex justify-end">
           <div className="max-w-md text-right">
-            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-normal mb-6">
+            <p className="text-base md:text-lg leading-relaxed text-gray-800 font-thin mb-6">
               En Omiya Clinic, cada tratamiento se realiza con paciencia, precisión y un enfoque personalizado que
               respeta tu bienestar y armonía natural.
             </p>
-            <button className="text-sm md:text-base font-semibold tracking-wide underline underline-offset-4 hover:no-underline transition-all">
+            <button className="text-sm md:text-base font-thin tracking-wide underline underline-offset-4 hover:no-underline transition-all">
               Explora Nuestros Tratamientos
             </button>
           </div>
@@ -204,16 +204,18 @@ export default function ServicesSection() {
                     {/* Content Overlay */}
                     <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
                       <div className="max-w-2xl text-white">
-                        <h3 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
+                        <h3 className="text-5xl md:text-7xl font-serif font-thin tracking-tight leading-tight mb-8">
                           {treatment.title.toUpperCase()}
                         </h3>
-                        <p className="text-xl md:text-2xl leading-relaxed mb-6 font-medium">{treatment.description}</p>
-                        <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-normal">
+                        <p className="text-xl md:text-2xl leading-relaxed mb-6 font-sans font-thin">
+                          {treatment.description}
+                        </p>
+                        <p className="text-base md:text-lg leading-relaxed opacity-90 mb-10 font-sans font-thin">
                           {treatment.longDescription}
                         </p>
 
                         <div className="flex items-center gap-4">
-                          <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-semibold tracking-wide hover:bg-gray-100 transition-colors">
+                          <button className="px-8 py-4 bg-white text-black text-sm md:text-base font-thin tracking-wide hover:bg-gray-100 transition-colors">
                             Agenda Tu Consulta
                           </button>
                           <button
@@ -239,7 +241,7 @@ export default function ServicesSection() {
                         </div>
 
                         <div className="mt-12 pt-8 border-t border-white/30">
-                          <p className="text-xs opacity-70 font-light">
+                          <p className="text-xs opacity-70 font-thin">
                             Desplázate hacia arriba o abajo para cambiar entre tratamientos
                           </p>
                         </div>

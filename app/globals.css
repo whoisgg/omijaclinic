@@ -112,41 +112,41 @@
   /* Adding typography system */
   /* Display Headings - Extra Large */
   .text-display {
-    @apply text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight;
+    @apply text-5xl md:text-6xl lg:text-7xl font-thin leading-tight tracking-tight;
   }
 
   /* Section Headings - Large */
   .text-heading-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-thin leading-tight;
   }
 
   /* Card Headings - Medium */
   .text-heading-md {
-    @apply text-2xl md:text-3xl font-light tracking-wide;
+    @apply text-2xl md:text-3xl font-thin tracking-wide;
   }
 
   /* Subheadings - Small */
   .text-heading-sm {
-    @apply text-sm uppercase tracking-wider font-normal;
+    @apply text-sm uppercase tracking-wider font-thin;
   }
 
   /* Body Text - Large */
   .text-body-lg {
-    @apply text-xl md:text-2xl lg:text-3xl leading-relaxed;
+    @apply text-xl md:text-2xl lg:text-3xl leading-relaxed font-thin;
   }
 
   /* Body Text - Medium */
   .text-body-md {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply text-base md:text-lg leading-relaxed font-thin;
   }
 
   /* Body Text - Small */
   .text-body-sm {
-    @apply text-sm md:text-base leading-relaxed;
+    @apply text-sm md:text-base leading-relaxed font-thin;
   }
 
   /* Button Text */
   .text-button {
-    @apply text-sm font-medium uppercase tracking-wide;
+    @apply text-sm font-thin uppercase tracking-wide;
   }
 }

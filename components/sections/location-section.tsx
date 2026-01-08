@@ -8,7 +8,7 @@ export default function LocationSection() {
           {/* Left Side: Contact Information */}
           <div className="space-y-12">
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium leading-tight text-foreground">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-thin leading-tight text-foreground">
               Visítanos
             </h2>
 
@@ -16,7 +16,7 @@ export default function LocationSection() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Address */}
               <div className="border-l-2 border-gray-300 pl-6">
-                <h3 className="text-sm uppercase tracking-wider font-medium mb-4" style={{ color: "#D4AF37" }}>
+                <h3 className="text-sm uppercase tracking-wider font-thin mb-4" style={{ color: "#D4AF37" }}>
                   Dirección
                 </h3>
                 <div className="text-foreground space-y-1">
@@ -27,7 +27,7 @@ export default function LocationSection() {
 
               {/* Contact */}
               <div className="border-l-2 border-gray-300 pl-6">
-                <h3 className="text-sm uppercase tracking-wider font-medium mb-4" style={{ color: "#D4AF37" }}>
+                <h3 className="text-sm uppercase tracking-wider font-thin mb-4" style={{ color: "#D4AF37" }}>
                   Contacto
                 </h3>
                 <div className="text-foreground space-y-2">
@@ -41,21 +41,21 @@ export default function LocationSection() {
 
             {/* Opening Hours */}
             <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-sm uppercase tracking-wider font-medium mb-6" style={{ color: "#D4AF37" }}>
+              <h3 className="text-sm uppercase tracking-wider font-thin mb-6" style={{ color: "#D4AF37" }}>
                 Horario de Atención
               </h3>
               <div className="space-y-4 text-foreground">
                 <div className="flex justify-between items-center">
                   <span>Lun - Vie</span>
-                  <span className="font-medium">09:00 - 18:00</span>
+                  <span className="font-thin">09:00 - 18:00</span>
                 </div>
                 <div className="border-t border-gray-200 pt-4 flex justify-between items-center">
                   <span>Sábado</span>
-                  <span className="font-medium">09:00 - 13:00</span>
+                  <span className="font-thin">09:00 - 13:00</span>
                 </div>
                 <div className="border-t border-gray-200 pt-4 flex justify-between items-center">
                   <span>Dom / Festivos</span>
-                  <span className="font-medium">Cerrado</span>
+                  <span className="font-thin">Cerrado</span>
                 </div>
               </div>
             </div>

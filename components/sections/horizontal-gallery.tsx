@@ -108,7 +108,7 @@ export default function HorizontalGallery() {
             <div className="relative w-[420px] max-w-[88vw] h-[86vh] rounded-[32px] bg-[#f3f3ef] px-10 py-10">
               {/* Top text */}
               <div className="text-center mb-8">
-                <p className="text-[11px] md:text-xs font-bold tracking-[0.14em] leading-snug text-zinc-900/85">
+                <p className="text-[11px] md:text-xs font-thin tracking-[0.14em] leading-snug text-zinc-900/85">
                   {panel.topText}
                 </p>
               </div>
@@ -130,8 +130,8 @@ export default function HorizontalGallery() {
 
               {/* Main headline with mixed weights */}
               <div className="text-center mt-16 mb-4 px-2">
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-zinc-900">{panel.headline}</h2>
-                <h2 className="text-3xl md:text-4xl font-light leading-tight text-zinc-400 mt-1">
+                <h2 className="text-3xl md:text-4xl font-thin leading-tight text-zinc-900">{panel.headline}</h2>
+                <h2 className="text-3xl md:text-4xl font-thin leading-tight text-zinc-400 mt-1">
                   {panel.headlineGrey}
                 </h2>
               </div>
@@ -171,7 +171,7 @@ export default function HorizontalGallery() {
 
               {/* Bottom text */}
               <div className="absolute left-10 right-10 bottom-10 text-center">
-                <p className="text-[11px] md:text-xs font-bold tracking-[0.14em] leading-snug text-zinc-900/85">
+                <p className="text-[11px] md:text-xs font-thin tracking-[0.14em] leading-snug text-zinc-900/85">
                   {panel.bottomText}
                 </p>
               </div>

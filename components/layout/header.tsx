@@ -64,7 +64,7 @@ export default function Header() {
         <nav className="flex items-center justify-between relative">
           <a
             href="/"
-            className={`font-light text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto`}
+            className={`font-serif font-thin text-base md:text-2xl tracking-tight transition-colors duration-300 w-[100px] md:w-auto`}
           >
             Omiya Clinic
           </a>
@@ -87,7 +87,7 @@ export default function Header() {
               />
             </div>
             <span
-              className={`text-xs md:text-sm font-medium tracking-[0.2em] uppercase transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
+              className={`text-xs md:text-sm font-thin tracking-[0.2em] uppercase transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
                 isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
               }`}
             >
@@ -97,7 +97,7 @@ export default function Header() {
 
           <a
             href="#follow"
-            className={`text-[10px] md:text-base font-light tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
+            className={`text-[10px] md:text-base font-sans font-thin tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300 flex items-center gap-1 whitespace-nowrap`}
           >
             Reservas
             <svg
@@ -129,7 +129,7 @@ export default function Header() {
         <div className="absolute top-6 right-6 z-10">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="text-black text-sm font-medium tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
+            className="text-black font-sans text-sm font-thin tracking-[0.2em] uppercase hover:opacity-70 transition-opacity"
             aria-label="Close menu"
           >
             CLOSE
@@ -164,7 +164,7 @@ export default function Header() {
                   href={item.href}
                   onMouseEnter={() => setHoveredItem(item.label)}
                   onMouseLeave={() => setHoveredItem(null)}
-                  className={`text-[32px] md:text-[54px] leading-[1.1] font-semibold uppercase tracking-tight transition-all duration-500 ${
+                  className={`text-[32px] md:text-[54px] leading-[1.1] font-serif font-thin uppercase tracking-tight transition-all duration-500 ${
                     hoveredItem === item.label ? "text-gray-400" : "text-black"
                   } ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{ transitionDelay: isMenuOpen ? `${(index + 1) * 100}ms` : "0ms" }}
@@ -183,7 +183,7 @@ export default function Header() {
             }`}
             style={{ transitionDelay: isMenuOpen ? "500ms" : "0ms" }}
           >
-            <div className="flex flex-col text-black text-xs font-bold tracking-wide">
+            <div className="flex flex-col text-black text-xs font-sans font-thin tracking-wide">
               <span>By</span>
               <span>Antonieta Ortega M</span>
             </div>
@@ -220,7 +220,7 @@ export default function Header() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:opacity-70 transition-opacity font-bold text-2xl"
+                className="text-black hover:opacity-70 transition-opacity font-thin text-2xl"
                 aria-label="LinkedIn"
               >
                 in
