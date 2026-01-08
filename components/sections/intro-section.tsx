@@ -1,81 +1,79 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
+import { useRef, useEffect } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-gsap.registerPlugin(ScrollTrigger)
+import gsap from "gsap"
+import type { JSX } from "react"
 
 export default function IntroSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const socialRef = useRef<HTMLDivElement>(null)
-  const headingRef = useRef<HTMLHeadingElement>(null)
+  const refs = useRef<(HTMLSpanElement | null)[]>([])
+  const container = useRef<HTMLDivElement>(null)
+
+  const phrase = "Omiya Clinic Un espacio donde bienestar, calma y salud se vuelven uno."
 
   useEffect(() => {
-    if (!sectionRef.current || !socialRef.current || !headingRef.current) return
-
-    const ctx = gsap.context(() => {
-      // Animate social links
-      gsap.from(socialRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: socialRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      })
-
-      // Animate heading with delay
-      gsap.from(headingRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
+    gsap.registerPlugin(ScrollTrigger)
+    createAnimation()
   }, [])
 
-  return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-white">
-      <div className="px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-          {/* Left side - Social links */}
-          <div ref={socialRef} className="md:col-span-3">
-            <nav className="flex flex-row md:flex-col gap-4 md:gap-2">
-              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
-                Instagram
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
-                Facebook
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm md:text-base">
-                TikTok
-              </a>
-            </nav>
-          </div>
+  const createAnimation = () => {
+    gsap.to(refs.current, {
+      scrollTrigger: {
+        trigger: container.current,
+        scrub: true,
+        start: `top center`,
+        end: `+=${window.innerHeight / 1.5}`,
+      },
+      opacity: 1,
+      ease: "none",
+      stagger: 0.1,
+    })
+  }
 
-          {/* Right side - Large text */}
-          <div className="md:col-span-9">
-            <h2
-              ref={headingRef}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#D4AF37] leading-tight uppercase"
-            >
-              OMIYA CLINIC Un espacio donde bienestar, calma y salud se vuelven uno.
-            </h2>
-          </div>
+  const splitWords = (phrase: string) => {
+    const body: JSX.Element[] = []
+    phrase.split(" ").forEach((word, i) => {
+      const letters = splitLetters(word)
+      body.push(
+        <p key={word + "_" + i} className="inline">
+          {letters}{" "}
+        </p>,
+      )
+    })
+    return body
+  }
+
+  const splitLetters = (word: string) => {
+    const letters: JSX.Element[] = []
+    word.split("").forEach((letter, i) => {
+      letters.push(
+        <span
+          key={letter + "_" + i}
+          ref={(el) => {
+            refs.current.push(el)
+          }}
+          className="opacity-20"
+        >
+          {letter}
+        </span>,
+      )
+    })
+    return letters
+  }
+
+  return (
+    <section className="bg-white px-6 md:px-8 lg:px-12 py-24 md:py-32">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="mb-8 flex flex-row gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] md:text-base">
+          <span>大</span>
+          <span>宮</span>
+        </div>
+
+        <div
+          ref={container}
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold leading-tight text-pretty uppercase"
+        >
+          {splitWords(phrase)}
         </div>
       </div>
     </section>
