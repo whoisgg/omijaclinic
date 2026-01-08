@@ -36,7 +36,7 @@ export default function PromoSection() {
       </div>
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
-        <p className="text-2xl text-white font-thin sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-pretty leading-relaxed max-w-5xl">
+        <p className="text-2xl text-white font-thin sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-pretty leading-relaxed">
           <span>OMIYA (大宮) significa </span>
           <span className="text-[#D4AF37]">gran santuario</span>
           <span> en japonés y hace referencia a la ciudad reconocida como cuna del bonsái. Un símbolo de </span>
