@@ -71,7 +71,7 @@ export default function AboutHero() {
       {/* Hero Image - First Frame */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-frames/frame_00_delay-0.04s.png"
+          src="/images/hero-acerca.png"
           alt="Dra. Antonieta Ortega"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
