@@ -90,7 +90,7 @@ export default function AboutHero() {
             className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-thin tracking-tight leading-[0.95] mb-8"
           >
             <span className="hero-title-line block">DRA.</span>
-            <span className="hero-title-line block whitespace-nowrap">ANTONIETA ORTEGA</span>
+            <span className="hero-title-line block md:whitespace-nowrap">ANTONIETA ORTEGA</span>
           </h1>
           <p
             ref={subtitleRef}

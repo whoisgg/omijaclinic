@@ -29,7 +29,7 @@ export default function Header() {
       const inPromo = promoRect && promoRect.top <= threshold && promoRect.bottom >= 0
       const inExperience = experienceRect && experienceRect.top <= threshold && experienceRect.bottom >= 0
 
-      if (inHero || inPromo || inExperience) {
+      if (inHero || inExperience) {
         setIsWhiteText(true)
       } else {
         setIsWhiteText(false)
@@ -54,7 +54,7 @@ export default function Header() {
     { label: "Tratamientos", href: "/tratamientos", image: "/images/clinca.webp" },
   ]
 
-  const textColor = isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
+  const textColor = isTreatmentExpanded ? "text-black" : isWhiteText ? "text-white" : "text-black"
 
   return (
     <>
@@ -77,18 +77,18 @@ export default function Header() {
             <div className="flex flex-col gap-[3px] w-10 md:w-[4.5rem]">
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isTreatmentExpanded ? "bg-white" : isWhiteText ? "bg-white" : "bg-black"
+                  isTreatmentExpanded ? "bg-black" : isWhiteText ? "bg-white" : "bg-black"
                 }`}
               />
               <span
                 className={`h-[1px] w-full transition-all duration-300 ${
-                  isTreatmentExpanded ? "bg-white" : isWhiteText ? "bg-white" : "bg-black"
+                  isTreatmentExpanded ? "bg-black" : isWhiteText ? "bg-white" : "bg-black"
                 }`}
               />
             </div>
             <span
               className={`text-xs md:text-sm font-thin tracking-[0.2em] uppercase transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
-                isTreatmentExpanded ? "text-white" : isWhiteText ? "text-white" : "text-black"
+                isTreatmentExpanded ? "text-black" : isWhiteText ? "text-white" : "text-black"
               }`}
             >
               Menu
