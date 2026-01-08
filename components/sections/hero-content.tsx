@@ -11,9 +11,9 @@ export default function HeroContent() {
             {/* Left: Title */}
             {/* Right: Description & CTAs */}
             <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-thin tracking-tight leading-[0.9] mb-2">
-              <span className="font-thin italic">Acompañamos tu bienestar,</span>
+              <span className="font-thin bold">Acompañamos tu bienestar,</span>
             </h1>
-            <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-light tracking-tight leading-[0.9] mb-8">
+            <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-light tracking-tight leading-[0.9] mb-8 italic">
               en cada etapa
             </h1>
 
