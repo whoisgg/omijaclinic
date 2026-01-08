@@ -65,8 +65,7 @@ export default function IntroSection() {
     <section className="bg-white px-6 md:px-8 lg:px-12 py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-8 flex flex-row gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#C5A059] md:text-base">
-          <span>大</span>
-          <span>宮</span>
+          <span>Propósito</span>
         </div>
 
         <div

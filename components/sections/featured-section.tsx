@@ -176,7 +176,7 @@ export default function FeaturedSection() {
           <div className="flex flex-col">
             <p className="text-xl font-sans font-thin text-gray-900">Dra. Antonieta Ortega</p>
             <p className="text-sm tracking-wider uppercase font-sans text-gray-500 mt-1 font-thin">
-              Directora Médica · Fundadora
+              Directora Clínica · Fundadora
             </p>
           </div>
           <Link
