@@ -153,21 +153,21 @@ export default function FeaturedSection() {
       {/* Right Column - Content */}
       <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-8 lg:px-16 xl:px-20 py-16 md:py-12 lg:py-24">
         <div ref={subtitleRef} className="mb-8 md:mb-6 lg:mb-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] font-sans" style={{ color: "#C5A059" }}>
+          <p className="text-sm md:text-base font-sans font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
             Visión Clínica
           </p>
         </div>
 
         <h2
           ref={headingRef}
-          className="text-4xl md:text-3xl lg:text-6xl font-serif font-thin mb-6 md:mb-4 lg:mb-6 leading-tight text-balance uppercase"
+          className="text-4xl md:text-3xl lg:text-6xl font-serif font-light mb-6 md:mb-4 lg:mb-6 leading-tight text-balance uppercase"
         >
           El verdadero cuidado comienza comprendiendo la historia de cada paciente
         </h2>
 
         <p
           ref={quoteRef}
-          className="text-lg md:text-base lg:text-xl font-sans italic mb-8 md:mb-6 lg:mb-8 leading-relaxed text-gray-700 font-thin"
+          className="text-xl md:text-lg lg:text-3xl font-sans font-thin italic mb-8 md:mb-6 lg:mb-8 leading-relaxed text-gray-700"
         >
           En OMIYA, entendemos como wellaging a la forma consciente de acompañar a cada persona en su proceso de
           bienestar, con criterio clínico, respeto y sensibilidad.
@@ -176,7 +176,7 @@ export default function FeaturedSection() {
         <div className="space-y-6 md:space-y-4 lg:space-y-6 mb-10 md:mb-6 lg:mb-10">
           <p
             ref={paragraph1Ref}
-            className="text-base md:text-sm lg:text-base leading-relaxed text-gray-700 font-sans font-thin"
+            className="text-lg md:text-base lg:text-lg leading-relaxed text-gray-700 font-sans font-thin"
           >
             Cada decisión clínica se basa en la armonía entre salud, calma y precisión, priorizando siempre lo natural
             por sobre la corrección.
@@ -184,7 +184,7 @@ export default function FeaturedSection() {
 
           <p
             ref={paragraph2Ref}
-            className="text-base md:text-sm lg:text-base leading-relaxed text-gray-700 font-sans font-thin"
+            className="text-lg md:text-base lg:text-lg leading-relaxed text-gray-700 font-sans font-thin"
           >
             Nuestro enfoque busca crear un espacio donde el bienestar se construye de manera consciente, personalizada y
             sostenible en cada etapa de la vida.
@@ -193,8 +193,8 @@ export default function FeaturedSection() {
 
         <div ref={signatureRef} className="flex items-start gap-3">
           <div className="flex flex-col">
-            <p className="text-xl md:text-lg lg:text-xl font-sans font-thin text-gray-900">Dra. Antonieta Ortega</p>
-            <p className="text-sm md:text-xs lg:text-sm tracking-wider uppercase font-sans text-gray-500 mt-1 font-thin">
+            <p className="text-xl md:text-lg lg:text-xl font-serif font-light text-gray-900">Dra. Antonieta Ortega</p>
+            <p className="text-sm md:text-xs lg:text-sm tracking-wider uppercase font-sans font-thin text-gray-500 mt-1">
               Directora Clínica · Fundadora
             </p>
           </div>
